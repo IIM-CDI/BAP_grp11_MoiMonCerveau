@@ -1,0 +1,39 @@
+#LobeFrontal {
+    fill: transparent;
+    transition: 0.3s;
+    pointer-events: all; 
+}
+#LobeFrontal:hover {
+    fill: green; 
+    cursor: pointer;
+}
+
+#LobeParietal {
+    fill: transparent;
+    transition: 0.3s;
+    pointer-events: all; 
+}
+#LobeParietal:hover {
+    fill: red; 
+    cursor: pointer;
+}
+
+#LobeFrontalModal, #LobeParietalModal {
+    width: 50vh;
+    height: 50vh;
+    position: absolute;
+    transform: translateX(50%); 
+}
+#LobeFrontalModal {
+    background-color: green;
+}
+#LobeParietalModal {
+    background-color: red;
+}
+
+.inactive {
+    display: none;
+}
+.active {
+    display: flex;
+}

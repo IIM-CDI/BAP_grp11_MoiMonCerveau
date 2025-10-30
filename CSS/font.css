@@ -1,19 +1,15 @@
 h1,h2,h3 {
     font-family: 'Courier New', Courier, monospace;
 }
-
 h1 {
     font-size: 3rem;
 }
-
 h2 {
     font-size: 2.5rem;
 }
-
 h3 {
     font-size: 2rem;
 }
-
 
 p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
