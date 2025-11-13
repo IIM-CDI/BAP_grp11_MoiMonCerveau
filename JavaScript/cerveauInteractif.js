@@ -35,3 +35,6 @@ LobeParietal.addEventListener('click', () => {
         ModalActive(LobeParietalModal);
     }
 })
+
+
+
