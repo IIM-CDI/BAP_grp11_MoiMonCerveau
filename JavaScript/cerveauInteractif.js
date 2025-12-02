@@ -6,6 +6,9 @@ let LobeParietal = document.getElementById('LobeParietal');
 let LobeFrontalModal = document.getElementById('LobeFrontalModal');
 let LobeParietalModal = document.getElementById('LobeParietalModal');
 
+// declaration des boutons de fermeture de modale
+let closeButtons = Array.from(document.getElementsByClassName('closeButton'));
+
 // map liant le lobe cliquable a sa modale correspondante
 let LobeAndsModals = new Map();
 LobeAndsModals.set(LobeFrontal, LobeFrontalModal);
@@ -34,5 +37,12 @@ LobeAndsModals.forEach((Modal, Lobe) => {
             ModalsInactive();
             ModalActive(Modal);
         }
+    })
+})
+
+// fonction de fermeture des modales
+closeButtons.forEach( closeButton => {
+    closeButton.addEventListener('click', function() {
+        ModalsInactive();
     })
 })

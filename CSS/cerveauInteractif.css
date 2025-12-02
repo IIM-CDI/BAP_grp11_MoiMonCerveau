@@ -30,8 +30,6 @@
 }
 
 .modal {
-    width: 70vh;
-    height: 70vh;
     border-radius: 2rem;
     position: absolute;
 
@@ -43,6 +41,14 @@
 }
 #LobeParietalModal {
     background-color: red;
+}
+
+.closeButton {
+    position: absolute;
+    top: 5%;
+    left: 92.5%;
+
+    cursor: pointer;
 }
 
 .inactive {
