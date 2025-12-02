@@ -1,3 +1,14 @@
+#cerveauSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cerveau {
+    width: 50vw;
+    height: 50vw;
+}
+
 #LobeFrontal {
     fill: transparent;
     transition: 0.3s;
@@ -18,11 +29,14 @@
     cursor: pointer;
 }
 
-#LobeFrontalModal, #LobeParietalModal {
-    width: 50vh;
-    height: 50vh;
+.modal {
+    width: 70vh;
+    height: 70vh;
+    border-radius: 2rem;
     position: absolute;
-    transform: translateX(50%); 
+
+    display: flex;
+    flex-direction: column;
 }
 #LobeFrontalModal {
     background-color: green;
@@ -36,4 +50,6 @@
 }
 .active {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
