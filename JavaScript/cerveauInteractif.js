@@ -40,7 +40,7 @@ LobeAndsModals.forEach((Modal, Lobe) => {
     })
 })
 
-// fonction de fermeture des modales
+// fonction de fermeture des modales au clic du bouton
 closeButtons.forEach( closeButton => {
     closeButton.addEventListener('click', function() {
         ModalsInactive();

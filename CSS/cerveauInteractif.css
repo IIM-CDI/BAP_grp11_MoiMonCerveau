@@ -9,25 +9,51 @@
     height: 50vw;
 }
 
-#LobeFrontal {
-    fill: transparent;
+#Cervelet {
+    fill: #7c8f53;
     transition: 0.3s;
-    pointer-events: all; 
+    cursor: pointer;
+}
+#Cervelet:hover {
+    fill: #000000;
+}
+
+#LobeFrontal {
+    fill: #a5aec7;
+    transition: 0.3s;
+    cursor: pointer;
 }
 #LobeFrontal:hover {
-    fill: green; 
+    fill: #000000;
+}
+
+#LobeTemporal {
+    fill: #22252c;
+    transition: 0.3s;
     cursor: pointer;
+}
+#LobeTemporal:hover {
+    fill: #000000;
 }
 
 #LobeParietal {
-    fill: transparent;
+    fill: #bcc7a5;
     transition: 0.3s;
-    pointer-events: all; 
-}
-#LobeParietal:hover {
-    fill: red; 
     cursor: pointer;
 }
+#LobeParietal:hover {
+    fill: #000000;
+}
+
+#LoveOcipital {
+    fill: #debbc8;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#LoveOcipital:hover {
+    fill: #000000;
+}
+
 
 .modal {
     border-radius: 2rem;
