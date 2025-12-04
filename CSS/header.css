@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+
+    padding: 1.5rem;
+    background-color: var(--vertMousse);
+    border-radius: 0 0 2rem 2rem;
+}
+
+a {
+    color: var(--minuit);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--vertChloris);
+    text-decoration: underline;
+}
