@@ -37,3 +37,9 @@
 .active {
     display: flex;
 }
+
+#LobeParietal:focus, #LobeFrontal:focus {
+    stroke: #000000;
+    stroke-width: 2;
+    outline: none;
+  }

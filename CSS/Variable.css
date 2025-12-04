@@ -8,3 +8,11 @@
     --rose : #DEBBC8;
     --Lavande : #A5AEC7;
 }
+body {
+    background-color: #ffc9c9;
+}
+
+button {
+    background-color: transparent;
+    border: transparent;
+}
