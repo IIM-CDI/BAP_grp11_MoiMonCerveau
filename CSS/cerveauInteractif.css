@@ -8,6 +8,12 @@
     width: 50vw;
     height: 50vw;
 }
+#cerveau [tabindex]{
+    outline: none;
+}
+#cerveau [tabindex]:focus-visible {
+    outline: 2px solid black;
+}
 
 #LobeFrontal {
     fill: #a5aec7;
@@ -27,12 +33,12 @@
     fill: #000000;
 }
 
-#LoveOcipital {
+#LobeOcipital {
     fill: #debbc8;
     transition: 0.3s;
     cursor: pointer;
 }
-#LoveOcipital:hover {
+#LobeOcipital:hover {
     fill: #000000;
 }
 
@@ -59,9 +65,15 @@
     padding: 2rem;
     position: absolute;
 
-    display: flex;
+    display: none;
     flex-direction: column;
 }
+.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #LobeFrontalModal {
     background-color: green;
 }
@@ -75,13 +87,4 @@
     left: 92.5%;
 
     cursor: pointer;
-}
-
-.inactive {
-    display: none;
-}
-.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

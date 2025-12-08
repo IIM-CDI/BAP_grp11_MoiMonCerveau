@@ -1,10 +1,16 @@
 // declaration des diferents lobe clockable du cerveau
 let LobeFrontal = document.getElementById('LobeFrontal');
 let LobeParietal = document.getElementById('LobeParietal');
+let LobeOcipital = document.getElementById('LobeOcipital');
+let LobeTemporal = document.getElementById('LobeTemporal');
+let Cervelet = document.getElementById('Cervelet');
 
 // declaration des differentes modales d'information sur les lobes
 let LobeFrontalModal = document.getElementById('LobeFrontalModal');
 let LobeParietalModal = document.getElementById('LobeParietalModal');
+let LobeOcipitalModal = document.getElementById('LobeOcipitalModal');
+let LobeTemporalModal = document.getElementById('LobeTemporalModal');
+let CerveletModal = document.getElementById('CerveletModal');
 
 // declaration des boutons de fermeture de modale
 let closeButtons = Array.from(document.getElementsByClassName('closeButton'));
@@ -13,18 +19,21 @@ let closeButtons = Array.from(document.getElementsByClassName('closeButton'));
 let LobeAndsModals = new Map();
 LobeAndsModals.set(LobeFrontal, LobeFrontalModal);
 LobeAndsModals.set(LobeParietal, LobeParietalModal);
+LobeAndsModals.set(LobeOcipital, LobeOcipitalModal);
+LobeAndsModals.set(LobeTemporal, LobeTemporalModal);
+LobeAndsModals.set(Cervelet, CerveletModal);
 
 // fonction faisant disparaitre toure les modales
 function ModalsInactive () {
     LobeAndsModals.forEach((Modal) => {
         Modal.classList.remove('active');
-        Modal.classList.add('inactive');
     })
+    // retirer le focus quand on ferme les modales
+    document.activeElement.blur();
 }
 
 // fonction faisant apparaitre la modal de l'element
 function ModalActive (Modal) {
-    Modal.classList.remove('inactive');
     Modal.classList.add('active');
 }
 
@@ -47,6 +56,7 @@ closeButtons.forEach( closeButton => {
     })
 })
 
+// fonction de fermeture des modales quand on appuie sur echap
 document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") {
         ModalsInactive();
