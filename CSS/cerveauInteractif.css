@@ -12,52 +12,32 @@
     outline: none;
 }
 #cerveau [tabindex]:focus-visible {
-    outline: 2px solid black;
+    outline: 2px solid var(--black);
+}
+    
+.Lobe {
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 #LobeFrontal {
-    fill: #a5aec7;
-    transition: 0.3s;
-    cursor: pointer;
+    fill: var(--Lavande);
 }
-#LobeFrontal:hover {
-    fill: #000000;
-}
-
 #LobeParietal {
-    fill: #bcc7a5;
-    transition: 0.3s;
-    cursor: pointer;
+    fill: var(--sauge);
 }
-#LobeParietal:hover {
-    fill: #000000;
-}
-
 #LobeOcipital {
-    fill: #debbc8;
-    transition: 0.3s;
-    cursor: pointer;
+    fill: var(--rose);
 }
-#LobeOcipital:hover {
-    fill: #000000;
-}
-
 #LobeTemporal {
-    fill: #22252c;
-    transition: 0.3s;
-    cursor: pointer;
+    fill: var(--minuit);
 }
-#LobeTemporal:hover {
-    fill: #000000;
+#Cervelet {
+    fill: var(--vertSapin);
 }
 
-#Cervelet {
-    fill: #7c8f53;
-    transition: 0.3s;
-    cursor: pointer;
-}
-#Cervelet:hover {
-    fill: #000000;
+#LobeFrontal:hover, #LobeParietal:hover, #LobeOcipital:hover, #LobeTemporal:hover,  #Cervelet:hover{
+    fill: var(--minuit);
 }
 
 .modal {
@@ -75,16 +55,25 @@
 }
 
 #LobeFrontalModal {
-    background-color: green;
+    background: var(--Lavande);
 }
 #LobeParietalModal {
-    background-color: red;
+    background: var(--sauge);
+}
+#LobeOcipitalModal {
+    background: var(--rose);
+}
+#LobeTemporalModal {
+    background: var(--minuit);
+    color: var(--white);
+}
+#CerveletModal {
+    background-color: var(--vertSapin);
 }
 
 .closeButton {
     position: absolute;
     top: 5%;
     left: 92.5%;
-
     cursor: pointer;
 }
