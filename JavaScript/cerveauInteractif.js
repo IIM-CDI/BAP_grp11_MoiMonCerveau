@@ -23,13 +23,16 @@ LobeAndsModals.set(LobeOcipital, LobeOcipitalModal);
 LobeAndsModals.set(LobeTemporal, LobeTemporalModal);
 LobeAndsModals.set(Cervelet, CerveletModal);
 
+
+let AvantCerveau = document.getElementById('AvantCerveau');
+
 // fonction faisant disparaitre toure les modales
 function ModalsInactive () {
     LobeAndsModals.forEach((Modal) => {
         Modal.classList.remove('active');
     })
-    // retirer le focus quand on ferme les modales
-    document.activeElement.blur();
+    // remettre le focus avant le cerveau quand on ferme les modales
+    AvantCerveau.focus();
 }
 
 // fonction faisant apparaitre la modal de l'element
