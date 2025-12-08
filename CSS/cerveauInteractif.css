@@ -9,30 +9,12 @@
     height: 50vw;
 }
 
-#Cervelet {
-    fill: #7c8f53;
-    transition: 0.3s;
-    cursor: pointer;
-}
-#Cervelet:hover {
-    fill: #000000;
-}
-
 #LobeFrontal {
     fill: #a5aec7;
     transition: 0.3s;
     cursor: pointer;
 }
 #LobeFrontal:hover {
-    fill: #000000;
-}
-
-#LobeTemporal {
-    fill: #22252c;
-    transition: 0.3s;
-    cursor: pointer;
-}
-#LobeTemporal:hover {
     fill: #000000;
 }
 
@@ -54,9 +36,27 @@
     fill: #000000;
 }
 
+#LobeTemporal {
+    fill: #22252c;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#LobeTemporal:hover {
+    fill: #000000;
+}
+
+#Cervelet {
+    fill: #7c8f53;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#Cervelet:hover {
+    fill: #000000;
+}
 
 .modal {
     border-radius: 2rem;
+    padding: 2rem;
     position: absolute;
 
     display: flex;

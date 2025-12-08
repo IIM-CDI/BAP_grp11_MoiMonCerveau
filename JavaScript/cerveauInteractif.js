@@ -46,3 +46,9 @@ closeButtons.forEach( closeButton => {
         ModalsInactive();
     })
 })
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        ModalsInactive();
+    }
+});
