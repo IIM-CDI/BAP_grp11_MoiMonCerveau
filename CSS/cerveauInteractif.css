@@ -12,13 +12,13 @@
     outline: none;
 }
 #cerveau [tabindex]:focus-visible {
-    outline: 2px solid var(--black);
+    outline: 2px solid var(--minuit);
 }
     
 .Lobe {
     transition: 0.3s;
     cursor: pointer;
-    fill: var(--black);
+    fill: var(--minuit);
     filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 }
 
@@ -63,7 +63,7 @@
 }
 #LobeTemporalModal {
     background: var(--minuit);
-    color: var(--white);
+    color: var(--blancCasse);
 }
 #CerveletModal {
     background-color: var(--vertSapin);
