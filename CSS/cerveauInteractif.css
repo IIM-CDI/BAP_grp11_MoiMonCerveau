@@ -1,12 +1,5 @@
-#cerveauSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #cerveau {
     width: 50vw;
-    height: 50vw;
 }
 #cerveau [tabindex]{
     outline: none;
@@ -18,7 +11,7 @@
 .Lobe {
     transition: 0.3s;
     cursor: pointer;
-    fill: var(--minuit);
+    fill: var(--blanc);
     filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 }
 
