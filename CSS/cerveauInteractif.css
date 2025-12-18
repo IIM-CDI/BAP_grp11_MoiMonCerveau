@@ -19,21 +19,22 @@
     transition: 0.3s;
     cursor: pointer;
     fill: var(--black);
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 }
 
-#LobeFrontal:hover {
+#LobeFrontal:hover, #LobeFrontal:focus {
     fill: var(--Lavande);
 }
-#LobeParietal:hover {
+#LobeParietal:hover, #LobeParietal:focus {
     fill: var(--sauge);
 }
-#LobeOcipital:hover {
+#LobeOcipital:hover, #LobeOcipital:focus {
     fill: var(--rose);
 }
-#LobeTemporal:hover {
+#LobeTemporal:hover, #LobeTemporal:focus {
     fill: var(--minuit);
 }
-#Cervelet:hover {
+#Cervelet:hover, #Cervelet:focus {
     fill: var(--vertSapin);
 }
 

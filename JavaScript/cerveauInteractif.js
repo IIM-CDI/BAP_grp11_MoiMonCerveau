@@ -74,6 +74,12 @@ LobeAndsModals.forEach((Modal, Lobe) => {
             ModalActive(Modal);
         }
     })
+
+    Lobe.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            ModalActive(Modal)
+        }
+    });
 })
 
 // fonction de fermeture des modales (echap)
@@ -84,3 +90,4 @@ document.addEventListener("keydown", function(e) {
         AvantCerveau.focus();
     }
 });
+
