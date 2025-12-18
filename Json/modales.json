@@ -1,0 +1,29 @@
+{
+    "modalesContenu" : [
+        {
+            "id": "LobeFrontalModal",
+            "titre" : "Lobe Frontal",
+            "description" : "Description Lobe Frontal"
+        },
+        {
+            "id": "LobeParietalModal",
+            "titre" : "Lobe Parietal",
+            "description" : "Description Lobe Parietal"
+        },
+        {
+            "id": "LobeOcipitalModal",
+            "titre" : "Lobe Ocipital ",
+            "description" : "Description Lobe Ocipital"
+        },
+        {
+            "id": "LobeTemporalModal",
+            "titre" : "Lobe Temporal",
+            "description" : "Description Lobe Temporal"
+        },
+        {
+            "id": "CerveletModal",
+            "titre" : "Cervelet Modal",
+            "description" : "Description Cervelet Modal"
+        }
+    ]
+}

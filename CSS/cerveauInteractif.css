@@ -18,26 +18,23 @@
 .Lobe {
     transition: 0.3s;
     cursor: pointer;
+    fill: var(--black);
 }
 
-#LobeFrontal {
+#LobeFrontal:hover {
     fill: var(--Lavande);
 }
-#LobeParietal {
+#LobeParietal:hover {
     fill: var(--sauge);
 }
-#LobeOcipital {
+#LobeOcipital:hover {
     fill: var(--rose);
 }
-#LobeTemporal {
+#LobeTemporal:hover {
     fill: var(--minuit);
 }
-#Cervelet {
+#Cervelet:hover {
     fill: var(--vertSapin);
-}
-
-#LobeFrontal:hover, #LobeParietal:hover, #LobeOcipital:hover, #LobeTemporal:hover,  #Cervelet:hover{
-    fill: var(--minuit);
 }
 
 .modal {
