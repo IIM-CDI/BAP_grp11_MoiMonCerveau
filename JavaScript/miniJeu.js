@@ -1,103 +1,129 @@
-// declaration des variables
+// Declaration des variables
 const btnStartMiniGame = document.querySelector(".btn-commencer");
 const containerMiniGame = document.querySelector(".container-mini_game");
 const couleurDemandee = document.querySelector(".color-question");
-const containerQuestions = document.querySelector(".container-questions")
-const containerReponses = document.querySelector(".container-reponse")
+const containerQuestions = document.querySelector(".container-questions");
 
-// commencer mini jeu au click
+let reponsesText = ["Vert", "Rouge", "Bleu", "Jaune"];
+let couleursFond = ["#81c784", "#e57373", "#64b5f6", "#fff176"];
+const colorMap = { "Vert": "#81c784", "Rouge": "#e57373", "Bleu": "#64b5f6", "Jaune": "#fff176" };
+
+let randomMessage;
+let nombreBonneReponses = 0;
+let iterationDeQuestions = 0;
+let previousQuestion = null;
+
+// Commencer mini jeu
 btnStartMiniGame.addEventListener("click", () => {
-    containerMiniGame.classList.toggle("apparaitre");
+    containerMiniGame.classList.add("apparaitre");
     btnStartMiniGame.style.display = "none";
-    generateQuestions();
-    generateResponses();
-})
+    generateMiniGame();
+});
 
-// verifier si la reponse clickée correpond au question
-// ptet dans generationReponse ppur chaque bouton esseyer si ca peut marchher addeventlistener
-
-let reponses = ["Vert", "Rouge", "Bleu", "Jaune"];
-let couleursBackground = ["#e57373", "#81c784", "#fff176", "#64b5f6"];
-
-// declaration en dehors de fonctions pour passer ensuite en generateResponses() pour comparer le text demandée et ce que utilisateur a choisir
-let randomMessage  
-let count = 0
-const iteration = 10
-// generer questions de mini jeu
-function generateQuestions() {
-    const randomIndex = Math.floor(Math.random() * reponses.length)
-    randomMessage = reponses[randomIndex]
-    couleurDemandee.innerHTML = randomMessage;
-    console.log(randomMessage)
-}
-
-// Mélange un tableau de manière uniforme (algorithme de Fisher–Yates)
+// Mélange un tableau de manière uniforme (algorithme de Fisher-Yates)
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-  
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  }
+}
 
-// Génère et affiche les réponses du mini-jeu dans un ordre aléatoire
-function generateResponses() {
-    const reponsesMelangees = shuffle(reponses);
-    const backgroundMelangees = shuffle(couleursBackground);
-    console.log(backgroundMelangees)
+// Préparer une combinaison valide ex(ne pas avoir texte couleur vert sur fond vert) et ensuite afficher avec generateResponses() sur la page
+function prepareValidCombination() {
+    let valid = false;
+    let validTexts, validColors;
 
-    
+    while (!valid) {
+        validTexts = shuffle([...reponsesText]);
+        validColors = shuffle([...couleursFond]);
+        valid = true;
 
-    const containerQuestions = document.createElement("div");
-    containerQuestions.classList.add("container-questions")
-
-    containerMiniGame.appendChild(containerQuestions)
-
-    for (let index = 0; index < reponsesMelangees.length; index++) {
-        const element = reponsesMelangees[index];
-        const backgroundRandom = backgroundMelangees[index];
-        
-        const newDiv = document.createElement("button");
-        newDiv.classList.add("container-reponse")
-
-        
-
-        newDiv.style.background = backgroundRandom;
-        
-
-        
-        
-
-        newDiv.addEventListener("click", () => {
-
-          
-            if (text.textContent === randomMessage) {
-                console.log("c'est bon")
-                count++
-                console.log(count)
-            } else {
-                console.log("c'est pas bon")
+        for (let i = 0; i < validTexts.length; i++) {
+            if (validColors[i] === colorMap[validTexts[i]]) {
+                valid = false; 
+                break;
             }
+        }
+    }
 
-            
-            couleurDemandee.innerHTML = ""
-            containerQuestions.remove()
+    return { validTexts, validColors };
+}
 
-            generateQuestions()
-            generateResponses()
-        })
+// Générer une couleur demandée
+function generateQuestions() {
+    let newMessage;
+
+    do {
+        const randomIndex = Math.floor(Math.random() * reponsesText.length);
+        newMessage = reponsesText[randomIndex];
+    } while (newMessage === previousQuestion);
+
+    previousQuestion = newMessage;
+    randomMessage = newMessage;
+    couleurDemandee.textContent = newMessage;
+}
+
+// Générer et afficher les boutons
+function generateResponses(validTexts, validColors) {
+    const containerQuestions = document.createElement("div");
+    containerQuestions.classList.add("container-questions");
+    containerMiniGame.appendChild(containerQuestions);
+
+    for (let i = 0; i < validTexts.length; i++) {
+        const newDiv = document.createElement("button");
+        newDiv.classList.add("container-reponse");
+        newDiv.style.background = validColors[i];
 
         const text = document.createElement("p");
+        text.textContent = validTexts[i];
 
-        text.textContent = element;
-
-
+        newDiv.appendChild(text);
         containerQuestions.appendChild(newDiv);
-        newDiv.appendChild(text)
-        
+
+        newDiv.addEventListener("click", () => {
+            iterationDeQuestions++;
+
+            if (text.textContent === randomMessage) {
+                // console.log("✅ bonne reponse");
+                nombreBonneReponses++;
+            } else {
+                // console.log("❌ mauvaise reponse");
+            }
+
+            // Fin du jeu
+            if (iterationDeQuestions >= 10) {
+                showFinalScore();
+            } else {
+                couleurDemandee.innerHTML = "";
+                containerQuestions.remove();
+                generateMiniGame(); // nouveau tour
+            }
+        });
     }
 }
+
+// Un tour du mini jeu
+function generateMiniGame() {
+    const { validTexts, validColors } = prepareValidCombination();
+    generateQuestions()
+    generateResponses(validTexts, validColors);
+}
+
+// Afficher score final
+function showFinalScore() {
+    containerMiniGame.innerHTML = "";
+
+    const stats = document.createElement("p");
+    stats.textContent = `Votre score : ${nombreBonneReponses}/${iterationDeQuestions}`;
+
+    const comment = document.createElement("p");
+    if (nombreBonneReponses >= 8) comment.textContent = "Trop fort !";
+    else if (nombreBonneReponses >= 5) comment.textContent = "Pas mal";
+    else comment.textContent = "Nul";
+
+    containerMiniGame.appendChild(stats);
+    containerMiniGame.appendChild(comment);
+}
+
 
