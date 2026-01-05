@@ -1,0 +1,31 @@
+h2 {
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4rem 15rem;
+
+    gap: 2rem;
+}
+
+#identiteSection {
+    background-color: var(--Lavande);
+}
+
+#cerveauSection {
+    background-color: var(--blancCasse);
+}
+
+#quizSection {
+    background-color: var(--minuit);
+    color: var(--blancCasse);
+}
+
+#miniJeuSection {
+    background-color: var(--sauge);    
+}
