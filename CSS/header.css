@@ -1,16 +1,22 @@
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.5rem;
+    background-color: var(--blancCasse);
+}
+
+#LogoFondation {
+    width: 15vw;
+    height: 100%;
 }
 
 nav {
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-
-    padding: 1.5rem;
-    background-color: var(--vertMousse);
-    border-radius: 0 0 2rem 2rem;
+    justify-content: flex-end;
+    gap: 2rem;
 }
 
 a {
@@ -19,6 +25,6 @@ a {
 }
 
 a:hover {
-    color: var(--vertChloris);
+    color: var(--rose);
     text-decoration: underline;
 }
