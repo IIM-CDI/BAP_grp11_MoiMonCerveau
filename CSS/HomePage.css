@@ -7,25 +7,122 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    position: relative;
+    overflow: hidden;
     padding: 4rem 15rem;
-
     gap: 2rem;
 }
 
+section .title-section, .text-section {
+    z-index: 1;
+} 
+
 #identiteSection {
-    background-color: var(--Lavande);
+    /* background-color: var(--Lavande); */
+    background-color: #c0cae6;
+}
+
+#identiteEmpreinte {
+    width: 25vw;
+    position: absolute;
+    left: -10rem;
+    top: -10rem;
+    rotate: 120deg;
+}
+
+#identiteTete {
+    width: 25vw;
+    position: absolute;
+    right: -8rem;
+    bottom: -8rem;
+    transform: scaleX(-1);
 }
 
 #cerveauSection {
     background-color: var(--blancCasse);
 }
 
+#cerveauEmpreinte1 {
+    width: 50vw;
+    position: absolute;
+    left: -25rem;
+    rotate: 30deg;
+}
+
+#cerveauEmpreinte2 {
+    width: 25vw;
+    position: absolute;
+    rotate: 40deg;
+    right: -10rem;
+    bottom: 30%;
+}
+
 #quizSection {
-    background-color: var(--minuit);
+    background-color: var(--rose);
     color: var(--blancCasse);
+}
+
+#quizTete {
+    width: 25vw;
+    position: absolute;
+    filter: brightness(80%);
+    right: -10rem;
+    top: -10rem;
+    rotate: 230deg;
+    
+    
 }
 
 #miniJeuSection {
     background-color: var(--sauge);    
+    
+}
+
+#minijeuEmpreinte1 {
+    width: 25vw;
+    position: absolute;
+    filter: brightness(80%);
+    left: -10rem;
+    top: -10rem;
+    rotate: 80deg;
+}
+
+#minijeuEmpreinte2 {
+    width: 30vw;
+    position: absolute;
+    filter: brightness(80%);
+    right: -10rem;
+    bottom: -10rem;
+    rotate: 30deg;
+}
+
+#footer {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#group-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+#newsletter {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: rgb(186, 255, 232);
+    border-radius: 1rem;
+}
+
+#footer_bottom {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer_bottom, #flex {
+    display: flex;
+    gap: 1rem;
 }
