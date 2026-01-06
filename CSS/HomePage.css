@@ -13,90 +13,102 @@ h2 {
     gap: 2rem;
 }
 
-section .title-section, .text-section {
-    z-index: 1;
-} 
+.bouton {
+    padding: 0.8rem;
+    border-radius: 2rem;
+    border: none;
+}
 
 #identiteSection {
-    /* background-color: var(--Lavande); */
-    background-color: #c0cae6;
+    background-color: var(--lavandeTransparent);
 }
-
-#identiteEmpreinte {
+#identiteEmpreinte, #identiteTete {
     width: 25vw;
     position: absolute;
-    left: -10rem;
-    top: -10rem;
+}
+#identiteEmpreinte {
+    left: -10%;
+    top: -20%;
     rotate: 120deg;
 }
-
 #identiteTete {
-    width: 25vw;
-    position: absolute;
-    right: -8rem;
-    bottom: -8rem;
+    right: -10%;
+    bottom: -20%;
     transform: scaleX(-1);
 }
 
 #cerveauSection {
-    background-color: var(--blancCasse);
+    background-color: var(--blancCasseTransparent);
 }
-
-#cerveauEmpreinte1 {
-    width: 50vw;
+#cerveauEmpreinte1, #cerveauEmpreinte2 {
     position: absolute;
-    left: -25rem;
+}
+#cerveauEmpreinte1 {
+    width: 40vw;
+    left: -25%;
     rotate: 30deg;
 }
-
 #cerveauEmpreinte2 {
     width: 25vw;
-    position: absolute;
     rotate: 40deg;
-    right: -10rem;
+    right: -15%;
     bottom: 30%;
 }
 
 #quizSection {
-    background-color: var(--rose);
-    color: var(--blancCasse);
+    background-color: var(--roseTransparent);
 }
-
 #quizTete {
     width: 25vw;
     position: absolute;
-    filter: brightness(80%);
-    right: -10rem;
-    top: -10rem;
-    rotate: 230deg;
-    
-    
+    right: -15%;
+    top: -20%;
+    rotate: 230deg;    
+}
+#quizBouton {
+    background-color: var(--lavande);
+    color: var(--blancCasse);
+    border: 2px solid var(--lavande);
+    transition: 0.3s;
+}
+#quizBouton:hover {
+    background-color: var(--rose);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
+    transition: 0.3s;
 }
 
 #miniJeuSection {
-    background-color: var(--sauge);    
-    
+    background-color: var(--saugeTransparent);    
 }
-
 #minijeuEmpreinte1 {
     width: 25vw;
     position: absolute;
-    filter: brightness(80%);
-    left: -10rem;
-    top: -10rem;
+    left: -10%;
+    top: -40%;
     rotate: 80deg;
 }
-
 #minijeuEmpreinte2 {
     width: 30vw;
     position: absolute;
-    filter: brightness(80%);
-    right: -10rem;
-    bottom: -10rem;
+    right: -15%;
+    bottom: -40%;
     rotate: 30deg;
 }
+#miniJeuBouton {
+    background-color: var(--vertSapin);
+    color: var(--blancCasse);
+    border: 2px solid var(--vertSapin);
+    transition: 0.3s;
+}
+#miniJeuBouton:hover {
+    background-color: var(--sauge);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
+    transition: 0.3s;
+}
 
-#footer {
+footer {
     padding: 5rem;
     display: flex;
     flex-direction: column;
