@@ -1,7 +1,7 @@
 // Declaration des variables
 const btnStartMiniGame = document.querySelector(".btn-commencer");
-const containerMiniGame = document.querySelector(".container-mini_game");
-const couleurDemandee = document.querySelector(".color-question");
+const containerMiniGame = document.querySelector(".question-mini_game");
+const questionMiniGame = document.querySelector(".container-mini_game");
 const containerQuestions = document.querySelector(".container-questions");
 
 let reponsesText = ["Vert", "Rouge", "Bleu", "Jaune"];
@@ -13,11 +13,21 @@ let nombreBonneReponses = 0;
 let iterationDeQuestions = 0;
 let previousQuestion = null;
 
+
+//  
+let intervalId;
+let duree = 0
+const time = document.createElement("p");
+time.classList.add('timer')
+questionMiniGame.appendChild(time);
+time.textContent = `Temps : ${duree}s`;
+
 // Commencer mini jeu
 btnStartMiniGame.addEventListener("click", () => {
     containerMiniGame.classList.add("apparaitre");
     btnStartMiniGame.style.display = "none";
     generateMiniGame();
+    startTimer();
 });
 
 // Mélange un tableau de manière uniforme (algorithme de Fisher-Yates)
@@ -52,6 +62,19 @@ function prepareValidCombination() {
 
 // Générer une couleur demandée
 function generateQuestions() {
+    const containerResponse = document.createElement("div");
+    containerResponse.classList.add("container");
+
+    const comment = document.createElement("p");
+    comment.textContent = "Choisisez la couleur ecrire :"
+    couleurDemandee = document.createElement("p");
+    couleurDemandee.classList.add('color-question');
+
+
+    containerResponse.appendChild(comment)
+    containerResponse.appendChild(couleurDemandee)
+    containerMiniGame.appendChild(containerResponse);
+
     let newMessage;
 
     do {
@@ -61,7 +84,7 @@ function generateQuestions() {
 
     previousQuestion = newMessage;
     randomMessage = newMessage;
-    couleurDemandee.textContent = newMessage;
+    couleurDemandee.textContent = `${newMessage}`;
 }
 
 // Générer et afficher les boutons
@@ -105,8 +128,9 @@ function generateResponses(validTexts, validColors) {
 
 // Un tour du mini jeu
 function generateMiniGame() {
+    containerMiniGame.innerHTML = "";
     const { validTexts, validColors } = prepareValidCombination();
-    generateQuestions()
+    generateQuestions();
     generateResponses(validTexts, validColors);
 }
 
@@ -117,13 +141,42 @@ function showFinalScore() {
     const stats = document.createElement("p");
     stats.textContent = `Votre score : ${nombreBonneReponses}/${iterationDeQuestions}`;
 
+    const time = document.createElement("p");
+    containerMiniGame.appendChild(time);
+    time.textContent = `Temps : ${duree}s`;
+    btnStartMiniGame.style.display = 'flex';
+    document.querySelector(".timer").style.display = "none";
+
+
     const comment = document.createElement("p");
     if (nombreBonneReponses >= 8) comment.textContent = "Trop fort !";
     else if (nombreBonneReponses >= 5) comment.textContent = "Pas mal";
     else comment.textContent = "Nul";
+    nombreBonneReponses = 0
+    iterationDeQuestions = 0
+    stopTimer();
 
     containerMiniGame.appendChild(stats);
     containerMiniGame.appendChild(comment);
+    containerMiniGame.appendChild(btnStartMiniGame);
 }
 
+// commencer le timer
+function startTimer() {
+    duree = 0;
+    document.querySelector(".timer").style.display = "flex";
+    time.textContent = `Temps : ${duree}s`;
 
+    if (intervalId) return;
+
+    intervalId = setInterval(() => {
+        duree++;
+        time.textContent = `Temps : ${duree}s`;
+    }, 1000);
+}
+
+// arreter le timer
+function stopTimer() {
+    clearInterval(intervalId);
+    intervalId = null;
+}
