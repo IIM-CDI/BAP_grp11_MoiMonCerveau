@@ -1,12 +1,6 @@
-#cerveauSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #cerveau {
     width: 50vw;
-    height: 50vw;
+    z-index: 1;
 }
 #cerveau [tabindex]{
     outline: none;
@@ -14,16 +8,16 @@
 #cerveau [tabindex]:focus-visible {
     outline: 2px solid var(--minuit);
 }
-    
+
 .Lobe {
     transition: 0.3s;
     cursor: pointer;
-    fill: var(--minuit);
+    fill: var(--blancCasse);
     filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 }
 
 #LobeFrontal:hover, #LobeFrontal:focus {
-    fill: var(--Lavande);
+    fill: var(--lavande);
 }
 #LobeParietal:hover, #LobeParietal:focus {
     fill: var(--sauge);
@@ -39,6 +33,7 @@
 }
 
 .modal {
+    z-index: 2;
     border-radius: 2rem;
     padding: 2rem;
     position: absolute;
@@ -53,7 +48,7 @@
 }
 
 #LobeFrontalModal {
-    background: var(--Lavande);
+    background: var(--lavande);
 }
 #LobeParietalModal {
     background: var(--sauge);

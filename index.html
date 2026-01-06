@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/CSS/Variable.css">
     <link rel="stylesheet" href="/CSS/font.css">
     <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
 
     <link rel="stylesheet" href="/CSS/HomePage.css">
     <link rel="stylesheet" href="CSS/cerveauInteractif.css">
@@ -26,10 +27,32 @@
         </nav>
     </header>
     <main>
-        <section id="Identité">
-            Bienvenue
+        <section id="identiteSection" class="section">
+            <h2>Bienvenue</h2>
+            <p>
+                La Fondation pour la Recherche sur le Cerveau œuvre depuis plus de 20 ans 
+                pour faire progresser la connaissance du cerveau et lutter contre les maladies neurologiques et psychiatriques. 
+                Grâce à la générosité du public et de ses partenaires, 
+                elle finance des projets de recherche innovants menés par des équipes scientifiques d’excellence partout en France. 
+                En soutenant la recherche fondamentale et clinique, 
+                la Fondation contribue à mieux comprendre le fonctionnement du cerveau, 
+                à améliorer les traitements et à offrir de nouveaux espoirs aux patients et à leurs proches.
+            </p>
+            <p>
+                La recherche sur le cerveau est aujourd’hui au cœur des grandes avancées scientifiques. 
+                Chaque année, des milliards d’euros sont investis pour mieux comprendre son fonctionnement, 
+                prévenir les maladies neurologiques et améliorer la santé mentale. Grâce à l’imagerie cérébrale, 
+                à l’intelligence artificielle et aux neurosciences cognitives, 
+                les chercheurs peuvent analyser l’activité du cerveau avec une précision jamais atteinte. 
+                Ces travaux ont déjà permis des progrès majeurs dans le traitement de maladies comme Alzheimer, 
+                Parkinson ou la dépression, et ouvrent la voie à des thérapies personnalisées. 
+                La recherche sur le cerveau est donc un enjeu scientifique, médical et sociétal majeur pour les décennies à venir.
+            </p>
+            <img src="/assets/home-page/EMPREINTE_LAVANDE.png" alt="Empreinte décorative" id="identiteEmpreinte">
+            <img src="/assets/home-page/TETE_LAVANDE.png" alt="Tête décorative" width="10%" id="identiteTete">
         </section>
-        <section id="cerveauSection">
+        <section id="cerveauSection" class="section">
+            <h2 tabindex="0" id="AvantCerveau">Le Cerveau</h2>
             <svg id="cerveau" data-name="cerveau" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.26 329.35">
                 <path tabindex="0" role="button" aria-label="Lobe Frontal" id="LobeFrontal" class="Lobe" d="M160.7,170.8c-10.9,7.2-21.9,13.1-34,17.6-11.1,4.2-22.2,7.5-33.9,9.6-10,1.8-20,1.8-30,.7-10.9-1.1-21.1-4.2-30.8-9.3-6.4-3.4-11.6-7.8-16.5-13.3-7-7.9-11.6-17.9-13.8-28.5-4-19.9-1-40.1,7.8-58.4,10.9-22.7,29.6-40.8,50.5-54.5,18.3-12,38.1-20.3,59.2-25.7C140.4,3.7,162.4-1.5,185.1.4c14.1,1.2,30.6,6.6,35.7,21.1,1.6,4.5,1.9,9.8-.5,14.1-5.6,9.5-11.6,18.1-17.6,27.3l-20.2,31.3c-4.8,7.4-8.5,15.1-11.5,23.4-5.1,14.3-6.4,29.9,1.2,43.6,0,2.5-8.7,7.7-11.5,9.6h0Z"/>
                 <path tabindex="0" role="button" aria-label="Lobe Parietal" id="LobeParietal" class="Lobe" d="M289.8,136.3c-31.7-5.4-60.4-2.7-88.9,12.5-6.1,3.2-11.5,6.6-17.3,10.1-1.2.7-2.9,1.3-4.2,1.1s-2.8-1.5-3.6-2.8c-2.9-4.7-3.1-10.1-3-15.6.4-18.7,10.4-39.9,20-55.7,8.6-14,18.5-26.6,29.5-38.9,10.5-14.6,25.3-24.8,43-29.1,45-10.9,90.5,12.3,110.6,53.6,5.1,10.6,8.7,21.5,10.4,33.1,2,13.4-1.9,25.8-14.9,31.6-5.1,2.3-10.3,3.7-16,4.4-20.1,2.5-45.4-1-65.5-4.4h0Z"/>
@@ -48,11 +71,103 @@
             </div>
             <div id="CerveletModal" class="modal">
             </div>
+
+            <p>
+                Le cerveau est l'organe central du système nerveux : 
+                il reçoit des informations provenant du corps et de l'environnement, 
+                les analyse, puis envoie des commandes pour agir. 
+                Il est composé de milliards de neurones qui communiquent entre eux grâce à des signaux électriques et chimiques, 
+                formant des réseaux très complexes. Ces réseaux permettent des fonctions essentielles comme la perception, 
+                le mouvement, la mémoire, les émotions et le raisonnement. Le cerveau fonctionne en permanence, 
+                même pendant le sommeil, en adaptant son activité selon les situations. 
+                Il est aussi capable de se modifier avec l'expérience grâce à la plasticité cérébrale, 
+                ce qui permet l'apprentissage et l'adaptation tout au long de la vie.
+            </p>
+            <img src="/assets/home-page/EMPREINTE_BLANC-PUR.png" alt="Empreinte décorative" id="cerveauEmpreinte1">
+            <img src="/assets/home-page/EMPREINTE_BLANC-PUR.png" alt="Empreinte décorative" id="cerveauEmpreinte2">
+        </section>
+        <section id="quizSection" class="section">
+            <h2>Le quizz</h2>
+            <p> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            </p>
+            <button class="bouton" id="quizBouton">
+                Accéder au quizz
+            </button>
+            <img src="/assets/home-page/TETE_ROSE.png" alt="Tête décorative" id="quizTete">
+        </section>
+        <section id="miniJeuSection" class="section">
+            <h2>Mini Jeu</h2>
+            <p>
+                Teste ta rapidité mentale et ta capacité de concentration avec ce jeu de couleurs. 
+                Pendant 30 secondes, quatre carrés s’affichent à l’écran, chacun contenant un mot de couleur. 
+                Ton objectif est de cliquer sur la couleur du texte, 
+                et non selon le mot écrit. Chaque bonne réponse augmente ton score. 
+                À la fin du test, découvre ton résultat et vois à quel point ton cerveau réagit vite.
+            </p>
+            <button class="bouton" id="miniJeuBouton">
+                Accéder au MiniJeu
+            </button>
+            <img src="/assets/home-page/EMPREINTE_VERT-SAUGE.png" alt="Empreinte décorative" id="minijeuEmpreinte1">
+            <img src="/assets/home-page/EMPREINTE_VERT-SAUGE.png" alt="Empreinte décorative" id="minijeuEmpreinte2">
         </section>
     </main>
 
     <footer>
-
+        <div id="links">
+            <div class="footerTopElements">
+                <h3>Product</h3>
+                <ul class="footerTopLinks">
+                    <li>Employee database</li>
+                    <li>Payroll</li>
+                    <li>Absences</li>
+                    <li>Time tracking</li>
+                    <li>Shift planner</li>
+                    <li>Recruiting</li>
+                </ul>
+            </div>
+            <div class="footerTopElements">
+                <h3>Information</h3>
+                <ul class="footerTopLinks">
+                    <li>FAQ</li>
+                    <li>Blog</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+            <div class="footerTopElements">
+                <h3>Company</h3>
+                <ul class="footerTopLinks">
+                    <li>About us</li>
+                    <li>Careers</li>
+                    <li>Contact us</li>
+                    <li>Lift Media</li>
+                </ul>
+            </div>
+            <div id="newsletter" class="footerTopElements">
+                <h3>Newsletter</h3>
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="52" height="52" rx="26" fill="#7D8F53"/>
+                    <path d="M38 26L30.0103 30L30.0103 26M38 26L13 26L30.0103 26M38 26L30.0103 22L30.0103 26" stroke="#F6F7F9" stroke-width="4"/>
+                </svg>
+                <p id="newsLetterMessage">Vivamus vel sapien nec justo sollicitudin aliquet. Proin in lectus a erat finibus dictum. Fusce nec augue sed urna feugiat vulputate.</p>
+            </div>
+        </div>
+        <hr>
+        <div id="footerBottom">
+            <img src="/assets/LogoFondation.png" id="LogoFondation" alt="Fondation pour la recherche du Cerveau">
+            <ul class="footerBottomLinks">
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Cookies</p>
+            </ul>
+            <ul class="footerBottomLinks">
+                <li><img src="assets/SocialMedia/LinkedinLogo.png" alt="Logo Linkedin cliquable" class="SocialMediaLogo"></li>
+                <li><img src="assets/SocialMedia/FaceBookLogo.png" alt="Logo FaceBook cliquable" class="SocialMediaLogo"></li>
+                <li><img src="assets/SocialMedia/XLogo.png" alt="Logo X cliquable" class="SocialMediaLogo"></li>
+            </ul>
+        </div>
     </footer>
 </body>
     <script src="JavaScript/cerveauInteractif.js"></script>

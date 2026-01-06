@@ -80,14 +80,16 @@ LobeAndsModals.forEach((Modal, Lobe) => {
             ModalActive(Modal)
         }
     });
+
+    // fonction de fermeture des modales (echap)
+    Lobe.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") {
+            ModalsInactive();
+            // remettre le focus avant le cerveau quand on ferme les modales par echap
+            AvantCerveau.focus();
+        }
+    });
 })
 
-// fonction de fermeture des modales (echap)
-document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-        ModalsInactive();
-        // remettre le focus avant le cerveau quand on ferme les modales par echap
-        AvantCerveau.focus();
-    }
-});
+
 
