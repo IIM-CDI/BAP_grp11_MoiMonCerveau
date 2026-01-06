@@ -1,5 +1,5 @@
 #cerveau {
-    width: 50vw;
+    width: 70vw;
     z-index: 1;
 }
 #cerveau [tabindex]{
@@ -37,6 +37,7 @@
     border-radius: 2rem;
     padding: 2rem;
     position: absolute;
+    top : 16%;
 
     display: none;
     flex-direction: column;
@@ -69,4 +70,15 @@
     top: 5%;
     left: 92.5%;
     cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+    #cerveau {
+        width: 50vw;
+    }
+
+    .modal {
+        top : 30%;
+    }
 }

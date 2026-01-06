@@ -9,7 +9,7 @@ h2 {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 4rem 15rem;
+    padding: 3rem;
     gap: 2rem;
 }
 
@@ -23,17 +23,17 @@ h2 {
     background-color: var(--lavandeTransparent);
 }
 #identiteEmpreinte, #identiteTete {
-    width: 25vw;
+    width: 30vw;
     position: absolute;
 }
 #identiteEmpreinte {
     left: -10%;
-    top: -20%;
+    top: -3%;
     rotate: 120deg;
 }
 #identiteTete {
-    right: -10%;
-    bottom: -20%;
+    right: -15%;
+    bottom: -1%;
     transform: scaleX(-1);
 }
 
@@ -44,25 +44,25 @@ h2 {
     position: absolute;
 }
 #cerveauEmpreinte1 {
-    width: 40vw;
-    left: -25%;
+    width: 30vw;
+    left: -20%;
     rotate: 30deg;
 }
 #cerveauEmpreinte2 {
     width: 25vw;
     rotate: 40deg;
     right: -15%;
-    bottom: 30%;
+    bottom: 15%;
 }
 
 #quizSection {
     background-color: var(--roseTransparent);
 }
 #quizTete {
-    width: 25vw;
+    width: 30vw;
     position: absolute;
     right: -15%;
-    top: -20%;
+    top: -3%;
     rotate: 230deg;    
 }
 #quizBouton {
@@ -82,17 +82,17 @@ h2 {
     background-color: var(--saugeTransparent);    
 }
 #minijeuEmpreinte1 {
-    width: 25vw;
+    width: 30vw;
     position: absolute;
-    left: -10%;
-    top: -40%;
+    left: -15%;
+    top: -1%;
     rotate: 80deg;
 }
 #minijeuEmpreinte2 {
     width: 30vw;
     position: absolute;
     right: -15%;
-    bottom: -40%;
+    bottom: -8%;
     rotate: 30deg;
 }
 #miniJeuBouton {
@@ -106,4 +106,43 @@ h2 {
     color: var(--minuit);
     border: 2px solid var(--minuit);
     transition: 0.3s;
+}
+
+
+
+@media (min-width: 768px) {
+    .section {
+        padding: 4rem 15rem;
+        gap: 2rem;
+    }
+
+    #identiteEmpreinte, #identiteTete {
+        width: 25vw;
+    }
+    #identiteEmpreinte {
+        top: -20%;
+        rotate: 120deg;
+    }
+    #identiteTete {
+        right: -10%;
+        bottom: -20%;
+    }
+
+    #cerveauEmpreinte1 {
+        width: 40vw;
+        left: -25%;
+    }
+
+    #quizTete {
+        width: 25vw;
+        top: -20%;
+    }
+
+    #minijeuEmpreinte1 {
+        width: 25vw;
+        top: -20%;
+    }
+    #minijeuEmpreinte2 {
+        bottom: -40%;
+    }
 }
