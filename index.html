@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/CSS/Variable.css">
     <link rel="stylesheet" href="/CSS/font.css">
     <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
 
     <link rel="stylesheet" href="/CSS/HomePage.css">
     <link rel="stylesheet" href="CSS/cerveauInteractif.css">
@@ -115,10 +116,10 @@
     </main>
 
     <footer>
-        <div id="group-links">
-            <div>
-                <b>Product</b>
-                <ul>
+        <div id="links">
+            <div class="footerTopElements">
+                <h3>Product</h3>
+                <ul class="footerTopLinks">
                     <li>Employee database</li>
                     <li>Payroll</li>
                     <li>Absences</li>
@@ -127,45 +128,45 @@
                     <li>Recruiting</li>
                 </ul>
             </div>
-            <div>
-                <b>Information</b>
-                <ul>
+            <div class="footerTopElements">
+                <h3>Information</h3>
+                <ul class="footerTopLinks">
                     <li>FAQ</li>
                     <li>Blog</li>
                     <li>Support</li>
                 </ul>
             </div>
-            <div>
-                <b>Company</b>
-                <ul>
+            <div class="footerTopElements">
+                <h3>Company</h3>
+                <ul class="footerTopLinks">
                     <li>About us</li>
                     <li>Careers</li>
                     <li>Contact us</li>
                     <li>Lift Media</li>
                 </ul>
             </div>
-            <div id="newsletter">
-                <b>Newsletter</b>
+            <div id="newsletter" class="footerTopElements">
+                <h3>Newsletter</h3>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="52" height="52" rx="26" fill="#7D8F53"/>
                     <path d="M38 26L30.0103 30L30.0103 26M38 26L13 26L30.0103 26M38 26L30.0103 22L30.0103 26" stroke="#F6F7F9" stroke-width="4"/>
                 </svg>
-                <p>Vivamus vel sapien nec justo sollicitudin aliquet. Proin in lectus a erat finibus dictum. Fusce nec augue sed urna feugiat vulputate.</p>
+                <p id="newsLetterMessage">Vivamus vel sapien nec justo sollicitudin aliquet. Proin in lectus a erat finibus dictum. Fusce nec augue sed urna feugiat vulputate.</p>
             </div>
         </div>
         <hr>
-        <div id="footer_bottom">
+        <div id="footerBottom">
             <img src="/assets/LogoFondation.png" id="LogoFondation" alt="Fondation pour la recherche du Cerveau">
-            <ul id="flex">
+            <ul class="footerBottomLinks">
                 <p>Terms</p>
                 <p>Privacy</p>
                 <p>Cookies</p>
             </ul>
-            <div id="flex">
-                <p>Facebook</p>
-                <p>Linkedin</p>
-                <p>X</p>
-            </div>
+            <ul class="footerBottomLinks">
+                <li><img src="assets/SocialMedia/LinkedinLogo.png" alt="Logo Linkedin cliquable" class="SocialMediaLogo"></li>
+                <li><img src="assets/SocialMedia/FaceBookLogo.png" alt="Logo FaceBook cliquable" class="SocialMediaLogo"></li>
+                <li><img src="assets/SocialMedia/XLogo.png" alt="Logo X cliquable" class="SocialMediaLogo"></li>
+            </ul>
         </div>
     </footer>
 </body>

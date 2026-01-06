@@ -17,7 +17,7 @@
 }
 
 #LobeFrontal:hover, #LobeFrontal:focus {
-    fill: var(--Lavande);
+    fill: var(--lavande);
 }
 #LobeParietal:hover, #LobeParietal:focus {
     fill: var(--sauge);
@@ -48,7 +48,7 @@
 }
 
 #LobeFrontalModal {
-    background: var(--Lavande);
+    background: var(--lavande);
 }
 #LobeParietalModal {
     background: var(--sauge);
