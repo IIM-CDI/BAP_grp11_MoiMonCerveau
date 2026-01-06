@@ -1,19 +1,23 @@
 footer {
-    padding: 5rem 8rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     background-color: var(--blancCasse);
 }
 
-.footerTopElements {
-    padding: 1rem;
+
+#footerTop {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-#links {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr;
-    gap: 1rem;
+.footerTopElements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
 }
 
 .footerTopLinks {
@@ -21,9 +25,6 @@ footer {
 }
 
 #newsletter {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
     padding: 1rem;
     background-color: var(--blancCasseTransparent);
     border-radius: 1rem;
@@ -37,10 +38,11 @@ hr {
 }
 
 #footerBottom {
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
     align-items: center;
-    display: flex; 
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .footerBottomLinks {
@@ -49,5 +51,32 @@ hr {
 }
 
 .SocialMediaLogo {
-    width: 4vw;
+    width: 12vw;
+}
+
+@media (min-width: 768px) {
+    footer {
+        padding: 5rem 8rem;
+        gap: 2rem;
+    }
+
+    #footerTop {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+    }
+
+    .footerTopElements {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #footerBottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .SocialMediaLogo {
+        width: 4vw;
+    }
 }
