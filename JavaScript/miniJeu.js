@@ -14,7 +14,7 @@ let iterationDeQuestions = 0;
 let previousQuestion = null;
 
 
-//  
+//  variables pour timer
 let intervalId;
 let duree = 0
 const time = document.createElement("p");
