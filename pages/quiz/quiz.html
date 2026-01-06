@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/CSS/destyle.css">
+    <link rel="stylesheet" href="/CSS/Variable.css">
+    <link rel="stylesheet" href="/CSS/font.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+
+    <link rel="stylesheet" href="/CSS/quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Quiz</title>
+    <meta name="description" content="Un quiz pour decouvrir votre cerveau">
+
+</head>
+<body>
+    <header>
+        <img src="/assets/LogoFondation.png" id="LogoFondation" alt="Fondation pour la recherche du Cerveau">
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/pages/quiz/quiz.html">quiz</a>
+            <a href="/pages/miniJeu/miniJeu.html">Mini Jeu</a>
+        </nav>
+    </header>
+</body>
+
+
+    <main class="content">
+        <div class="container">
+            <div id="quiz-container" class="quiz-body">
+                <h1 class="quiz-title">cerveau et activité intelectual </h1>
+                <div class="quiz-question">
+                    <h2><span id="question-number"></span> <span id="question-text"></span></h2>
+                </div>
+                <div class="options-container" id="question-options">
+                   
+                </div>
+                <div class="quiz-controls quiz-buttons">
+                    <button type="button" id="previous-btn" class="btn btn-secondary" disabled>Previous</button>
+                    <button type="button" id="next-btn" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="footerTop">
+            <div class="footerTopElements">
+                <h3>Product</h3>
+                <ul class="footerTopLinks">
+                    <li>Employee database</li>
+                    <li>Payroll</li>
+                    <li>Absences</li>
+                    <li>Time tracking</li>
+                    <li>Shift planner</li>
+                    <li>Recruiting</li>
+                </ul>
+            </div>
+            <div class="footerTopElements">
+                <h3>Information</h3>
+                <ul class="footerTopLinks">
+                    <li>FAQ</li>
+                    <li>Blog</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+            <div class="footerTopElements">
+                <h3>Company</h3>
+                <ul class="footerTopLinks">
+                    <li>About us</li>
+                    <li>Careers</li>
+                    <li>Contact us</li>
+                    <li>Lift Media</li>
+                </ul>
+            </div>
+            <div id="newsletter" class="footerTopElements">
+                <h3>Newsletter</h3>
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="52" height="52" rx="26" fill="#7D8F53"/>
+                    <path d="M38 26L30.0103 30L30.0103 26M38 26L13 26L30.0103 26M38 26L30.0103 22L30.0103 26" stroke="#F6F7F9" stroke-width="4"/>
+                </svg>
+                <p id="newsLetterMessage">Vivamus vel sapien nec justo sollicitudin aliquet. Proin in lectus a erat finibus dictum. Fusce nec augue sed urna feugiat vulputate.</p>
+            </div>
+        </div>
+        <hr>
+        <div id="footerBottom">
+            <img src="/assets/LogoFondation.png" id="LogoFondation" alt="Fondation pour la recherche du Cerveau">
+            <ul class="footerBottomLinks">
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Cookies</p>
+            </ul>
+            <ul class="footerBottomLinks">
+                <li><img src="/assets/SocialMedia/LinkedinLogo.png" alt="Logo Linkedin cliquable" class="SocialMediaLogo"></li>
+                <li><img src="/assets/SocialMedia/FaceBookLogo.png" alt="Logo FaceBook cliquable" class="SocialMediaLogo"></li>
+                <li><img src="/assets/SocialMedia/XLogo.png" alt="Logo X cliquable" class="SocialMediaLogo"></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/JavaScript/quiz.js"></script>
+</html>
