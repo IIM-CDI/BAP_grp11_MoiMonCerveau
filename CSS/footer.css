@@ -6,11 +6,11 @@ footer {
     background-color: var(--blancCasse);
 }
 
-
 #footerTop {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
+    width: 100%;
 }
 
 .footerTopElements {
@@ -60,11 +60,6 @@ hr {
         gap: 2rem;
     }
 
-    #footerTop {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 2fr;
-    }
-
     .footerTopElements {
         display: flex;
         flex-direction: column;
@@ -78,5 +73,12 @@ hr {
 
     .SocialMediaLogo {
         width: 4vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    #footerTop {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;
     }
 }
