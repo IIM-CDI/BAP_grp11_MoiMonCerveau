@@ -2,7 +2,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
+    z-index: 10;
     padding: 1.5rem;
     background-color: var(--blancCasse);
 }
