@@ -82,3 +82,7 @@ hr {
         grid-template-columns: 1fr 1fr 1fr 2fr;
     }
 }
+
+#NewsLetterBouton {
+    cursor: pointer;
+}

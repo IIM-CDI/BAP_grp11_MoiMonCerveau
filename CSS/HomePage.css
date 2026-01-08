@@ -62,7 +62,7 @@ h2 {
     width: 30vw;
     position: absolute;
     right: -15%;
-    top: -3%;
+    top: -20%;
     rotate: 230deg;    
 }
 #quizBouton {
@@ -112,14 +112,15 @@ h2 {
     .section {
         padding: 4rem 15rem;
         gap: 2rem;
+        min-height: 70vh;
     }
 
     #identiteEmpreinte, #identiteTete {
         width: 25vw;
     }
     #identiteEmpreinte {
-        top: -20%;
-        rotate: 120deg;
+        top: -35%;
+        rotate: 106deg;
     }
     #identiteTete {
         right: -10%;
@@ -133,7 +134,8 @@ h2 {
 
     #quizTete {
         width: 25vw;
-        top: -20%;
+        top: -30%;
+        rotate: -88deg;
     }
 
     #minijeuEmpreinte1 {
