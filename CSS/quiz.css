@@ -1,3 +1,11 @@
+main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Layout */
 .content {
     max-width: 700px;
@@ -26,7 +34,19 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 1.5rem;
-    background: #7D8F53;
+    color: var(--minuit);
+}
+
+.question-counter {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--minuit);
+}
+
+.quiz-title .title-text {
+    background: var(--vertSapin);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -35,14 +55,14 @@
 .quiz-body h2 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: var(--minuit);
     font-weight: 600;
     line-height: 1.4;
 }
 
 #question-text, .question-text {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--minuit);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -53,7 +73,7 @@
 }
 
 .option-block {
-    background: #79819D;
+    background: var(--lavande);
     border: none;
     border-radius: 12px;
     margin-bottom: 12px;
@@ -63,14 +83,14 @@
 }
 
 .option-block:nth-child(2) {
-    background: #A5AEC7;
+    background: color-mix(in srgb, var(--lavande) 85%, black);
+    filter: brightness(0.90);
 }
 
 .option-block:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
-
 
 
 /* Answer Feedback */
@@ -88,12 +108,12 @@
 
 .feedback-correct {
     background: rgba(0, 0, 0, 0.1);
-    border: 2px solid #000000;
+    border: 2px solid var(--minuit);
 }
 
 .feedback-wrong {
     background: rgba(0, 0, 0, 0.1);
-    border: 2px solid #000000;
+    border: 2px solid var(--minuit);
 }
 
 .feedback-header {
@@ -113,11 +133,11 @@
 
 .feedback-correct-answer {
     margin-bottom: 0.5rem;
-    color: #333;
+    color: var(--minuit);
 }
 
 .feedback-explanation {
-    color: #555;
+    color: var(--minuit);
     line-height: 1.5;
 }
 
@@ -127,7 +147,7 @@
     padding: 1rem 1.25rem;
     cursor: pointer;
     border-radius: 12px;
-    color: white;
+    color: var(--minuit);
     font-size: 0.95rem;
     gap: 12px;
     font-weight: 500;
@@ -166,9 +186,9 @@
 }
 
 .btn-primary {
-    background: #79819D;
-    color: #ffffff;
-    border: 2px solid #000000;
+    background: var(--lavande);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
     transition: transform 0.2s ease;
 }
 
@@ -177,9 +197,9 @@
 }
 
 .btn-secondary {
-    background: #79819D;
-    color: #ffffff;
-    border: 2px solid #000000;
+    background: var(--lavande);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
     transition: transform 0.2s ease;
 }
 
@@ -198,6 +218,7 @@
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    
 }
 
 .result::before {
@@ -207,25 +228,22 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    
 }
 
 .res-header {
-    border-bottom: 2px solid #e9ecef;
+    color: #000000;
+    border-bottom: 2px solid #000000;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .result-question {
     font-weight: 600;
     margin: 1rem 0 0.5rem;
-    color: #333;
+    color: var(--minuit);
 }
 
 .last-row {
@@ -235,22 +253,22 @@
 }
 
 .correct {
-    color: #10b981;
+    color: var(--vertSapin);
     font-weight: 600;
 }
 
 .wrong {
-    color: #ef4444;
+    color: var(--rose);
     font-weight: 600;
 }
 
 .c-correct {
-    color: #10b981;
+    color: var(--vertSapin);
     margin-left: 0.5rem;
 }
 
 .c-wrong {
-    color: #ef4444;
+    color: var(--rose);
     margin-left: 0.5rem;
 }
 
@@ -311,3 +329,65 @@
         padding: 0.4rem 0.75rem;
     }
 }
+
+/* Color Themes - Changes every 5 questions */
+body.theme-lavande {
+    background: var(--lavandeTransparent) !important;
+}
+body.theme-lavande .option-block,
+body.theme-lavande .option-block:nth-child(2),
+body.theme-lavande .btn-primary,
+body.theme-lavande .btn-secondary {
+    background: var(--lavande);
+}
+
+body.theme-rose {
+    background: var(--roseTransparent) !important;
+}
+body.theme-rose .option-block,
+body.theme-rose .option-block:nth-child(2),
+body.theme-rose .btn-primary,
+body.theme-rose .btn-secondary {
+    background: var(--rose);
+}
+
+body.theme-sauge {
+    background: var(--saugeTransparent) !important;
+}
+body.theme-sauge .option-block,
+body.theme-sauge .option-block:nth-child(2),
+body.theme-sauge .btn-primary,
+body.theme-sauge .btn-secondary {
+    background: var(--sauge);
+}
+
+/* Transition for smooth color change */
+body,
+.option-block,
+.btn-primary,
+.btn-secondary {
+    transition: background-color 1s ease;
+}
+
+
+.deco-left {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 150px;
+    height: auto;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    z-index: 5;
+} 
+
+.deco-right {
+    position: absolute;
+    top: 30%;
+    right: 20px;
+    width: 150px;
+    height: auto;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    z-index: 10;
+}   

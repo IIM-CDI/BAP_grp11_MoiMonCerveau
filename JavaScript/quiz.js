@@ -1,7 +1,3 @@
-
-
-
-
 // PROGRESS BAR MODULE
 
 const ProgressBar = {
@@ -527,8 +523,6 @@ const quizData = [
 ];
 
 
-// QUIZ APPLICATION
-
 const Quiz = {
     currentQuestion: 0,
     userAnswers: [],
@@ -542,6 +536,28 @@ const Quiz = {
 
     displayQuestion() {
         const question = quizData[this.currentQuestion];
+        
+        // Update color theme every 5 questions (lavande -> rose -> sauge)
+        const themes = ['theme-lavande', 'theme-rose', 'theme-sauge'];
+        const themeIndex = Math.floor(this.currentQuestion / 5) % 3;
+        $('body').removeClass('theme-lavande theme-rose theme-sauge').addClass(themes[themeIndex]);
+        
+
+      //show current question out of 25
+      $('#question-count').html(`Question ${this.currentQuestion + 1} sur ${quizData.length}`);
+       
+
+        // Update quiz title every 5 questions
+        const titles = [
+            { text: 'Cerveau et activité intellectuelle' },
+            { text: 'Cerveau et activité physique' },
+            { text: 'Cerveau et alimentation' },
+            { text: 'Cerveau et sommeil' },
+            { text: 'Cerveau et interactions sociales' }
+        ];
+        const titleIndex = Math.floor(this.currentQuestion / 5) % titles.length;
+        const title = titles[titleIndex];
+        $('.quiz-title').html(`<span class="title-text">${title.text}</span>`);
         
         // Remove previous feedback and answer highlighting
         $('.answer-feedback').remove();
@@ -686,7 +702,9 @@ const Quiz = {
         let score = 0;
         quizData.forEach((question, index) => {
             if (this.userAnswers[index] === question.answer) {
-                score++;
+                score += 10;
+            } else {
+                score += 5;
             }
         });
         return score;
@@ -697,22 +715,21 @@ const Quiz = {
         $('#quiz-container').hide();
         
         const score = this.calculateScore();
-        const total = quizData.length;
+        const maxScore = quizData.length * 10;
         
         let resultHTML = `
             <div class="result">
-                <h1 class="res-header">Total Score: ${score}/${total}</h1>
+                <h1 class="res-header">Total Score: ${score} points</h1>
                 <button id="restartQuiz" class="btn btn-primary" style="margin: 20px 0;">
                     Restart Quiz
                 </button>
         `;
-        
+        // Detailed results
         quizData.forEach((question, index) => {
           const userAnswer = this.userAnswers[index];
           const isCorrect = userAnswer === question.answer;
           const scoreIcon = isCorrect 
-            ? '<span class="correct">1</span><i class="fa fa-check c-correct"></i>'
-            : '<span class="wrong">0</span><i class="fa fa-remove c-wrong"></i>';
+           
           const correctText = question.options[question.answer];
           const userText = (userAnswer !== undefined && userAnswer !== null)
             ? question.options[userAnswer]
@@ -722,9 +739,9 @@ const Quiz = {
             <div class="result-question">
               <span>Q ${question.id}</span> ${question.question}
             </div>
-            <div><b>Correct answer:</b> ${correctText}</div>
+            
             <div><b>Your answer:</b> ${userText}</div>
-            <div class="last-row"><b>Score:</b> ${scoreIcon}</div>
+           
           `;
         });
         
@@ -742,5 +759,3 @@ const Quiz = {
 $(document).ready(() => {
   Quiz.init();
 });
-
-
