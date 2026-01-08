@@ -20,28 +20,29 @@ let AutorisationError = document.getElementById('AutorisationError');
 
 formulaire.addEventListener ('submit', function(form) {
     form.preventDefault();
+    console.log("Données remplie dans le formulaire")
 
     NomValue = NomChamp.value;
-    console.log(NomValue);
+    console.log("Nom : " + NomValue);
 
     PrenomValue = PrenomChamp.value;
-    console.log(PrenomValue);
+    console.log("Prenom : " + PrenomValue);
 
     EmailValue = EmailChamp.value;
     if (EmailValue) {
-        console.log(EmailValue);
+        console.log("Email : " + EmailValue);
         EmailError.innerHTML = "";
     } else {
-        console.log("Pas d'email renseigné");
+        console.log("Email : " + "Pas d'email renseigné");
         EmailError.innerHTML = "Pas d'email renseigné";
     }
 
     AutorisationValue = AutorisationChamp.checked;
     if (AutorisationValue == true) {
-        console.log(AutorisationValue)
+        console.log("Autorisation : " + AutorisationValue)
         AutorisationError.innerHTML = "";
     } else {
-        console.log("Vous n'avez pas accepter de recevoir la NewsLetter par mail");
+        console.log("Autorisation : " + "Vous n'avez pas accepter de recevoir la NewsLetter par mail");
         AutorisationError.innerHTML = "Vous n'avez pas accepter de recevoir la NewsLetter par mail";
     }
 
