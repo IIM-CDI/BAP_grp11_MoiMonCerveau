@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="/CSS/header.css">
     <link rel="stylesheet" href="/CSS/footer.css">
 
-    <link rel="stylesheet" href="/CSS/miniJeu.css">
+    <link rel="stylesheet" href="/CSS/formulaire.css">
 
-    <title>Mini jeu</title>
-    <meta name="description" content="Un petit jeu amusant pour faire travailler votre cerveau">
+    <title>News Letter</title>
+    <meta name="description" content="Inscrivez vous a notre NewsLetter">
 </head>
 <body>
     <header>
@@ -26,19 +26,51 @@
         </nav>
     </header>
     <main>
-        <div class="mini-game">
-            <div class="intro-screen">
-                <h1>Mets ton cerveau au défi !</h1>
-                <button class="btn-start">Commencer !</button>
+        <section id="homePageLink">
+            <div id="Redirection">
+                <img src="/assets/LogoFondationNoir.png" id="LogoFondationNoir" alt="Logo Fondation">
+                <h1>Decouvrez le cerveau</h1>
+                <button class="bouton" id="HomePageButton">Acceder au cerveau</button>
             </div>
-            <div class="game-container">
-                <div class="question-container"></div>
-            </div>
-        </div>
-        <div class="decoration-circle-top"></div>
-        <div class="decoration-circle-bottom"></div>
+            <img src="/assets/formulaire/TeteBlanche.png" id="homePageLinkIllustration" class="Illustration" alt="decoration tete blanche">
+        </section>
+        <section id="formulaireSection">
+            <form action="" method="POST" id="NewsletterFormulaire">
+                <div id="description">
+                    <h2 id="FormulaireTitre">Rejoignez nous</h2>
+                    <p>Reçois régulièrement des news et des infos pour mieux comprendre et prendre soin de ton cerveau. 
+                    Conseils pratiques, découvertes et bonnes habitudes pour l’entretenir au quotidien.</p>
+                </div>
+                <fieldset>
+                    <div class="textInput">
+                        <label for="Nom">Nom</label>
+                        <input type="text" name="Nom" id="Nom" class="textField">
+                    </div>
+                    <div class="textInput">
+                        <label for="Prenom">Prenom</label>
+                        <input type="text" name="Prenom" id="Prenom" class="textField">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="textInput">
+                        <label for="Email">Adresse email</label>
+                        <input type="text" name="Email" id="Email" class="textField">
+                        <p id="EmailError" class="error"></p>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="checkbox">
+                        <input type="checkbox" name="Autorisation" id="Autorisation">
+                        <label for="Autorisation">J’accepte de recevoir des emails et je peux me désinscrire à tout moment.</label>
+                        <p id="AutorisationError" class="error"></p>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Valider" class="bouton" id="ValidationBouton">
+            </form>
+            <img src="/assets/formulaire/EmpreinteVertSauge.png" id="FormulaireIllustration" class="Illustration" alt="decoration empreinte vert sauge">
+        </section>
     </main>
-    <footer>
+            <footer>
         <div id="footerTop">
             <div class="footerTopElements">
                 <h3>Product</h3>
@@ -93,6 +125,6 @@
         </div>
     </footer>
 </body>
-    <script src="/JavaScript/miniJeu.js"></script>
+    <script src="/JavaScript/formulaire.js"></script>
     <script src="/JavaScript/footer.js"></script>
 </html>

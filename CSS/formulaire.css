@@ -1,0 +1,165 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+#homePageLink {
+    display: none;
+    width: 100vw;
+    background-color: var(--blancCasseTransparent);
+}
+
+#Redirection {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    padding: 3rem;
+    margin-left: auto;
+}
+
+#LogoFondationNoir {
+    width: 50vw;
+}
+
+.Illustration {
+    position: absolute;
+}
+
+#homePageLinkIllustration {
+    width: 25vw;
+    top: 30%;
+    left: -50%;
+    rotate: 30deg;
+}
+
+.bouton {
+    background-color: var(--vertSapin);
+    color: var(--blancCasse);
+    border: 2px solid var(--vertSapin);
+    padding: 0.8rem;
+    border-radius: 2rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.bouton:hover {
+    background-color: var(--sauge);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
+}
+
+#formulaireSection {
+    width: 100vw;
+    background-color: var(--saugeTransparent);
+}
+
+#NewsletterFormulaire {
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+
+    padding: 3rem;
+    gap: 3rem;
+}
+
+#description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#FormulaireTitre {
+    text-decoration: underline;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.textInput {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.textField {
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+.checkbox {
+    width: 100%;
+}
+
+#ValidationBouton {
+    width: 100%;
+}
+
+.error {
+    color: red;
+}
+
+#FormulaireIllustration {
+    width: 40vw;
+    top: 80%;
+    left: 90%;
+    rotate: 240deg;
+}
+
+@media (min-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        height: 120vh;
+    }
+
+    #homePageLink {
+        display: flex;
+        width: 35vw;
+        background-color: var(--blancCasseTransparent);
+    }
+
+    #Redirection {
+        width: 25vw;
+    }
+
+    #LogoFondationNoir {
+        width: 15vw;
+    }
+
+    #formulaireSection {
+        width: 65vw;
+        background-color: var(--saugeTransparent);
+    }
+
+    #NewsletterFormulaire {
+        width:50vw;
+    }
+
+    fieldset {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .checkbox {
+        width: 26vw;
+    }
+
+    #ValidationBouton {
+        width: 10vw;
+    }
+
+    #FormulaireIllustration {
+        width: 40vw;
+        top: 40%;
+        left: 55%;
+        rotate: 240deg;
+    }
+}

@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="/CSS/header.css">
     <link rel="stylesheet" href="/CSS/footer.css">
 
-    <link rel="stylesheet" href="/CSS/miniJeu.css">
+    <link rel="stylesheet" href="/CSS/quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>Mini jeu</title>
-    <meta name="description" content="Un petit jeu amusant pour faire travailler votre cerveau">
+    <title>Quiz</title>
+    <meta name="description" content="Un quiz pour decouvrir votre cerveau">
 </head>
 <body>
     <header>
@@ -25,18 +26,23 @@
             <a href="/pages/formulaire/formulaire.html">Newsletter</a>
         </nav>
     </header>
-    <main>
-        <div class="mini-game">
-            <div class="intro-screen">
-                <h1>Mets ton cerveau au défi !</h1>
-                <button class="btn-start">Commencer !</button>
+    <main class="content">
+        <div class="container">
+            <div id="quiz-container" class="quiz-body">
+                <h1 class="quiz-title">cerveau et activité intelectual </h1>
+                <div class="quiz-question">
+                    <h2><span id="question-number"></span> <span id="question-text"></span></h2>
+                </div>
+                <div class="options-container" id="question-options">
+                   
+                </div>
+                <div class="quiz-controls quiz-buttons">
+                    <button type="button" id="previous-btn" class="btn btn-secondary" disabled>Previous</button>
+                    <button type="button" id="next-btn" class="btn btn-primary">Next</button>
+                </div>
             </div>
-            <div class="game-container">
-                <div class="question-container"></div>
-            </div>
+            <div id="result"></div>
         </div>
-        <div class="decoration-circle-top"></div>
-        <div class="decoration-circle-bottom"></div>
     </main>
     <footer>
         <div id="footerTop">
@@ -93,6 +99,7 @@
         </div>
     </footer>
 </body>
-    <script src="/JavaScript/miniJeu.js"></script>
+    <script src="/JavaScript/quiz.js"></script>
     <script src="/JavaScript/footer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </html>
