@@ -33,6 +33,10 @@ footer {
     color: var(--minuitTransparent);
 }
 
+.NewsLetterBouton {
+    cursor: pointer;
+}
+
 hr {
    border-color: var(--blancCasseTransparent); 
 }
