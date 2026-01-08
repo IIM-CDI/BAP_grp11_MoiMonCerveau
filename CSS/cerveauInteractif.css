@@ -36,7 +36,7 @@
     z-index: 2;
     width: 50vw;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 3rem;
     position: absolute;
     top : 16%;
 
@@ -73,8 +73,8 @@
 .closeButton {
     width: 2vw;
     position: absolute;
-    top: 5%;
-    left: 94%;
+    top: 12%;
+    left: 92%;
     cursor: pointer;
 }
 

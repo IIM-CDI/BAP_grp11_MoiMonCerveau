@@ -44,7 +44,8 @@ h3 {
 }
 
 p, a, li, label{
-    font-family: 'JetBrainsMono';
+    /* font-family: 'JetBrainsMono'; */
+    font-family: 'Inter';
     font-size: 1rem;
 }
 
