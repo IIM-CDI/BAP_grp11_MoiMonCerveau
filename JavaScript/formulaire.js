@@ -1,3 +1,8 @@
+let HomePageButton = document.getElementById('HomePageButton');
+HomePageButton.addEventListener('click', function(){
+    window.open('/index.html','_self');
+})
+
 // formulaire
 let formulaire = document.getElementById('NewsletterFormulaire');
 
