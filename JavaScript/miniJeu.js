@@ -114,10 +114,10 @@ function generateAnswers(shuffledColorNames, shuffledColors) {
             questionsAnswered++;
 
             if (answerText.textContent === targetColorName) {
-                // console.log("✅ bonne reponse");
+                // console.log("bonne reponse");
                 correctAnswersCount++;
             } else {
-                // console.log("❌ mauvaise reponse");
+                // console.log("mauvaise reponse");
             }
 
             // Fin du jeu
@@ -126,7 +126,7 @@ function generateAnswers(shuffledColorNames, shuffledColors) {
             } else {
                 colorDisplayElement.innerHTML = "";
                 answersGrid.remove();
-                generateMiniGame(); // nouveau tour
+                generateMiniGame(); // Nouveau tour
                 topCircle.style.background = shuffledColors[0];
                 bottomCircle.style.background = shuffledColors[3];
             }

@@ -1,9 +1,11 @@
+/* === Body: setup du fond et taille de la page === */
 body {
     background-color: var(--blancCasseTransparent);
     height: 100vh;
     overflow: hidden;
 }
 
+/* === Main: conteneur principal pour le mini-jeu === */
 main {
     position: relative;
     overflow: hidden;
@@ -11,6 +13,7 @@ main {
     padding: 1rem;
 }
 
+/* === Mini-game: container centré avec disposition en colonne === */
 .mini-game {
     display: flex;
     justify-content: center;
@@ -19,6 +22,7 @@ main {
     text-align: center;
 }
 
+/* === Intro-screen: écran d’introduction centré et au-dessus des éléments décoratifs === */
 .intro-screen {
     position: relative;
     z-index: 10;
@@ -27,6 +31,7 @@ main {
     flex-direction: column;
 }
 
+/* === Bouton Start: style principal et hover === */
 .btn-start {
     margin-top: 2rem;
     align-self: center;
@@ -35,13 +40,13 @@ main {
     border-radius: 1rem;
     padding: 1rem;
 }
-
 .btn-start:hover {
     background-color: var(--blancCasse);
     color: var(--minuit);
     cursor: pointer;
 }
 
+/* === Game-container: boîte principale du mini-jeu, masquée initialement === */
 .game-container {
     position: relative;
     z-index: 10;
@@ -56,39 +61,42 @@ main {
     margin-right: auto;
 }
 
+/* === Question-container: disposition verticale des questions et réponses === */
 .question-container {
     display: flex;
     flex-direction: column;
     padding: 1rem;
 }
 
+/* === Game-container visible: affichage de la boîte lorsque le jeu est actif === */
 .game-container.visible {
     display: grid;
 }
 
+/* === Game-timer: affichage du chronomètre (caché par défaut) === */
 .game-timer {
     display: none;
 }
 
+/* === Question-header: centrer le titre de la question === */
 .question-header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* === Answer-button: style des boutons de réponse et hover === */
 .answer-button {
     border: none;
-    color: white;
+    color: var(--blancCasse);
     padding: 20px;
     border-radius: 10px;
-
 }
-
 .answer-button:hover {
-    background-color: #306e32;
     cursor: pointer;
 }
 
+/* === Answers-grid: disposition en grille pour les boutons de réponse === */
 .answers-grid {
     margin-top: 1rem;
     display: grid;
@@ -96,6 +104,7 @@ main {
     gap: 1rem;
 }
 
+/* === Color-display: affichage de la couleur cible ou feedback === */
 .color-display {
     text-align: center;
     white-space: pre-line;
@@ -104,9 +113,10 @@ main {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     margin-top: 0.5rem;
-    color: white;
+    color: var(--blancCasse);
 }
 
+/* === Décorations: cercles décoratifs en haut et en bas === */
 .decoration-circle-top, .decoration-circle-bottom {
     position: absolute;
     width: 15rem;
@@ -115,22 +125,23 @@ main {
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.421);
 }
 
+/* === Cercle décoratif supérieur: position et couleur === */
 .decoration-circle-top {
     left: -5rem;
     top: -5rem;
     background-color: #FE8B8C;
 }
 
+/* === Cercle décoratif inférieur: position et couleur === */
 .decoration-circle-bottom {
     right: -10rem;
     top: 15rem;
     background-color: #C9E385;
 }
 
+/* === Responsive: ajustements pour écrans larges === */
 @media (min-screen: 768px) {
-
     .game-container {
         padding: 2rem; 
     }
-
 }
