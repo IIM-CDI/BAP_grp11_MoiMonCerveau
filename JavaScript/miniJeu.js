@@ -1,23 +1,37 @@
-// Declaration des variables
-const btnStartMiniGame = document.querySelector(".btn-commencer");
-const containerMiniGame = document.querySelector(".container-mini_game");
-const couleurDemandee = document.querySelector(".color-question");
-const containerQuestions = document.querySelector(".container-questions");
+// Déclaration des éléments DOM
+const startButton = document.querySelector(".btn-start");
+const introScreen = document.querySelector(".intro-screen");
+const questionContainer = document.querySelector(".question-container");
+const gameContainer = document.querySelector(".game-container");
+const topCircle = document.querySelector(".decoration-circle-top");
+const bottomCircle = document.querySelector(".decoration-circle-bottom");
 
-let reponsesText = ["Vert", "Rouge", "Bleu", "Jaune"];
-let couleursFond = ["#81c784", "#e57373", "#64b5f6", "#fff176"];
-const colorMap = { "Vert": "#81c784", "Rouge": "#e57373", "Bleu": "#64b5f6", "Jaune": "#fff176" };
+// Variables pour les couleurs
+const colorNames = ["Vert", "Rouge", "Bleu", "Jaune"];
+const backgroundColors = ["#C9E385", "#FE8B8C", "#A5AEC7", "#FFDF78"];
+const colorToHexMap = { "Vert": "#C9E385", "Rouge": "#FE8B8C", "Bleu": "#A5AEC7", "Jaune": "#FFDF78" };
 
-let randomMessage;
-let nombreBonneReponses = 0;
-let iterationDeQuestions = 0;
-let previousQuestion = null;
+// Variables d'état du jeu
+let targetColorName;
+let correctAnswersCount = 0;
+let questionsAnswered = 0;
+let previousTargetColor = null;
+let colorDisplayElement;
 
-// Commencer mini jeu
-btnStartMiniGame.addEventListener("click", () => {
-    containerMiniGame.classList.add("apparaitre");
-    btnStartMiniGame.style.display = "none";
+// Variables pour le timer
+let timerIntervalId;
+let elapsedTime = 0;
+const timerElement = document.createElement("p");
+timerElement.classList.add('game-timer');
+gameContainer.appendChild(timerElement);
+timerElement.textContent = `Temps : ${elapsedTime}s`;
+
+// Démarrer le mini-jeu
+startButton.addEventListener("click", () => {
+    gameContainer.classList.add("visible");
+    introScreen.style.display = "none";
     generateMiniGame();
+    startTimer();
 });
 
 // Mélange un tableau de manière uniforme (algorithme de Fisher-Yates)
@@ -29,101 +43,148 @@ function shuffle(array) {
     return array;
 }
 
-// Préparer une combinaison valide ex(ne pas avoir texte couleur vert sur fond vert) et ensuite afficher avec generateResponses() sur la page
+// Préparer une combinaison valide (éviter d'avoir texte couleur vert sur fond vert)
 function prepareValidCombination() {
-    let valid = false;
-    let validTexts, validColors;
+    let isValid = false;
+    let shuffledColorNames, shuffledColors;
 
-    while (!valid) {
-        validTexts = shuffle([...reponsesText]);
-        validColors = shuffle([...couleursFond]);
-        valid = true;
+    while (!isValid) {
+        shuffledColorNames = shuffle([...colorNames]);
+        shuffledColors = shuffle([...backgroundColors]);
+        isValid = true;
 
-        for (let i = 0; i < validTexts.length; i++) {
-            if (validColors[i] === colorMap[validTexts[i]]) {
-                valid = false; 
+        for (let i = 0; i < shuffledColorNames.length; i++) {
+            if (shuffledColors[i] === colorToHexMap[shuffledColorNames[i]]) {
+                isValid = false; 
                 break;
             }
         }
     }
 
-    return { validTexts, validColors };
+    return { shuffledColorNames, shuffledColors };
 }
 
-// Générer une couleur demandée
-function generateQuestions() {
-    let newMessage;
+// Générer la question avec la couleur demandée
+function generateQuestion(shuffledColors) {
+    const questionWrapper = document.createElement("div");
+    questionWrapper.classList.add("question-header");
+
+    const instructionText = document.createElement("p");
+    instructionText.textContent = "Choisisez la couleur ecrite !";
+    instructionText.style.color = shuffledColors[3];
+    
+    colorDisplayElement = document.createElement("p");
+    colorDisplayElement.classList.add('color-display');
+    colorDisplayElement.style.background = shuffledColors[0];
+
+    questionWrapper.appendChild(instructionText);
+    questionWrapper.appendChild(colorDisplayElement);
+    questionContainer.appendChild(questionWrapper);
+
+    let newTargetColor;
 
     do {
-        const randomIndex = Math.floor(Math.random() * reponsesText.length);
-        newMessage = reponsesText[randomIndex];
-    } while (newMessage === previousQuestion);
+        const randomIndex = Math.floor(Math.random() * colorNames.length);
+        newTargetColor = colorNames[randomIndex];
+    } while (newTargetColor === previousTargetColor);
 
-    previousQuestion = newMessage;
-    randomMessage = newMessage;
-    couleurDemandee.textContent = newMessage;
+    previousTargetColor = newTargetColor;
+    targetColorName = newTargetColor;
+    colorDisplayElement.textContent = `${newTargetColor}`;
 }
 
-// Générer et afficher les boutons
-function generateResponses(validTexts, validColors) {
-    const containerQuestions = document.createElement("div");
-    containerQuestions.classList.add("container-questions");
-    containerMiniGame.appendChild(containerQuestions);
+// Générer et afficher les boutons de réponse
+function generateAnswers(shuffledColorNames, shuffledColors) {
+    const answersGrid = document.createElement("div");
+    answersGrid.classList.add("answers-grid");
+    questionContainer.appendChild(answersGrid);
 
-    for (let i = 0; i < validTexts.length; i++) {
-        const newDiv = document.createElement("button");
-        newDiv.classList.add("container-reponse");
-        newDiv.style.background = validColors[i];
+    for (let i = 0; i < shuffledColorNames.length; i++) {
+        const answerButton = document.createElement("button");
+        answerButton.classList.add("answer-button");
+        answerButton.style.background = shuffledColors[i];
 
-        const text = document.createElement("p");
-        text.textContent = validTexts[i];
+        const answerText = document.createElement("p");
+        answerText.textContent = shuffledColorNames[i];
 
-        newDiv.appendChild(text);
-        containerQuestions.appendChild(newDiv);
+        answerButton.appendChild(answerText);
+        answersGrid.appendChild(answerButton);
 
-        newDiv.addEventListener("click", () => {
-            iterationDeQuestions++;
+        answerButton.addEventListener("click", () => {
+            questionsAnswered++;
 
-            if (text.textContent === randomMessage) {
+            if (answerText.textContent === targetColorName) {
                 // console.log("✅ bonne reponse");
-                nombreBonneReponses++;
+                correctAnswersCount++;
             } else {
                 // console.log("❌ mauvaise reponse");
             }
 
             // Fin du jeu
-            if (iterationDeQuestions >= 10) {
+            if (questionsAnswered >= 10) {
                 showFinalScore();
             } else {
-                couleurDemandee.innerHTML = "";
-                containerQuestions.remove();
+                colorDisplayElement.innerHTML = "";
+                answersGrid.remove();
                 generateMiniGame(); // nouveau tour
+                topCircle.style.background = shuffledColors[0];
+                bottomCircle.style.background = shuffledColors[3];
             }
         });
     }
 }
 
-// Un tour du mini jeu
+// Générer un tour du mini-jeu
 function generateMiniGame() {
-    const { validTexts, validColors } = prepareValidCombination();
-    generateQuestions()
-    generateResponses(validTexts, validColors);
+    questionContainer.innerHTML = "";
+    const { shuffledColorNames, shuffledColors } = prepareValidCombination();
+    generateQuestion(shuffledColors);
+    generateAnswers(shuffledColorNames, shuffledColors);
 }
 
-// Afficher score final
+// Afficher le score final
 function showFinalScore() {
-    containerMiniGame.innerHTML = "";
+    questionContainer.innerHTML = "";
 
-    const stats = document.createElement("p");
-    stats.textContent = `Votre score : ${nombreBonneReponses}/${iterationDeQuestions}`;
+    const scoreText = document.createElement("p");
+    scoreText.textContent = `Votre score : ${correctAnswersCount}/${questionsAnswered}`;
 
-    const comment = document.createElement("p");
-    if (nombreBonneReponses >= 8) comment.textContent = "Trop fort !";
-    else if (nombreBonneReponses >= 5) comment.textContent = "Pas mal";
-    else comment.textContent = "Nul";
+    const finalTimeElement = document.createElement("p");
+    questionContainer.appendChild(finalTimeElement);
+    finalTimeElement.textContent = `Temps : ${elapsedTime}s`;
+    startButton.style.display = 'flex';
+    document.querySelector(".game-timer").style.display = "none";
 
-    containerMiniGame.appendChild(stats);
-    containerMiniGame.appendChild(comment);
+    const feedbackText = document.createElement("p");
+    if (correctAnswersCount >= 8) feedbackText.textContent = "Exellent, Bravo !";
+    else if (correctAnswersCount >= 5) feedbackText.textContent = "Proche des meilleurs scores";
+    else feedbackText.textContent = "Avec un peu d'entrainement votre score montera";
+    
+    correctAnswersCount = 0;
+    questionsAnswered = 0;
+    stopTimer();
+
+    questionContainer.appendChild(scoreText);
+    questionContainer.appendChild(feedbackText);
+    questionContainer.appendChild(startButton);
 }
 
+// Démarrer le timer
+function startTimer() {
+    elapsedTime = 0;
+    document.querySelector(".game-timer").style.display = "flex";
+    timerElement.textContent = `Temps : ${elapsedTime}s`;
 
+    if (timerIntervalId) return;
+
+    timerIntervalId = setInterval(() => {
+        elapsedTime++;
+        timerElement.textContent = `Temps : ${elapsedTime}s`;
+    }, 1000);
+}
+
+// Arrêter le timer
+function stopTimer() {
+    clearInterval(timerIntervalId);
+    timerIntervalId = null;
+}
