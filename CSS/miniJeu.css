@@ -78,14 +78,12 @@ main {
 
 .answer-button {
     border: none;
-    color: white;
+    color: var(--blancCasse);
     padding: 20px;
     border-radius: 10px;
-
 }
 
 .answer-button:hover {
-    background-color: #306e32;
     cursor: pointer;
 }
 
@@ -104,7 +102,7 @@ main {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     margin-top: 0.5rem;
-    color: white;
+    color: var(--blancCasse);
 }
 
 .decoration-circle-top, .decoration-circle-bottom {

@@ -126,7 +126,7 @@ function generateAnswers(shuffledColorNames, shuffledColors) {
             } else {
                 colorDisplayElement.innerHTML = "";
                 answersGrid.remove();
-                generateMiniGame(); // nouveau tour
+                generateMiniGame(); // Nouveau tour
                 topCircle.style.background = shuffledColors[0];
                 bottomCircle.style.background = shuffledColors[3];
             }
