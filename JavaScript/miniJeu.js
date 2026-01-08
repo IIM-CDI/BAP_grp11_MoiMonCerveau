@@ -70,7 +70,7 @@ function generateQuestion(shuffledColors) {
     questionWrapper.classList.add("question-header");
 
     const instructionText = document.createElement("p");
-    instructionText.textContent = "Choisisez la couleur ecrire !";
+    instructionText.textContent = "Choisisez la couleur ecrite !";
     instructionText.style.color = shuffledColors[3];
     
     colorDisplayElement = document.createElement("p");
@@ -156,9 +156,9 @@ function showFinalScore() {
     document.querySelector(".game-timer").style.display = "none";
 
     const feedbackText = document.createElement("p");
-    if (correctAnswersCount >= 8) feedbackText.textContent = "Trop fort !";
-    else if (correctAnswersCount >= 5) feedbackText.textContent = "Pas mal";
-    else feedbackText.textContent = "Nul";
+    if (correctAnswersCount >= 8) feedbackText.textContent = "Exellent, Bravo !";
+    else if (correctAnswersCount >= 5) feedbackText.textContent = "Proche des meilleurs scores";
+    else feedbackText.textContent = "Avec un peu d'entrainement votre score montera";
     
     correctAnswersCount = 0;
     questionsAnswered = 0;
