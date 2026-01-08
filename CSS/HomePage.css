@@ -1,3 +1,149 @@
-main {
-    background-color: var(--blancCasse);
+h2 {
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.bouton {
+    padding: 0.8rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+#identiteSection {
+    background-color: var(--lavandeTransparent);
+}
+#identiteEmpreinte, #identiteTete {
+    width: 30vw;
+    position: absolute;
+}
+#identiteEmpreinte {
+    left: -10%;
+    top: -3%;
+    rotate: 120deg;
+}
+#identiteTete {
+    right: -15%;
+    bottom: -1%;
+    transform: scaleX(-1);
+}
+
+#cerveauSection {
+    background-color: var(--blancCasseTransparent);
+}
+#cerveauEmpreinte1, #cerveauEmpreinte2 {
+    position: absolute;
+}
+#cerveauEmpreinte1 {
+    width: 30vw;
+    left: -20%;
+    rotate: 30deg;
+}
+#cerveauEmpreinte2 {
+    width: 25vw;
+    rotate: 40deg;
+    right: -15%;
+    bottom: 15%;
+}
+
+#quizSection {
+    background-color: var(--roseTransparent);
+}
+#quizTete {
+    width: 30vw;
+    position: absolute;
+    right: -15%;
+    top: -20%;
+    rotate: 230deg;    
+}
+#quizBouton {
+    background-color: var(--lavande);
+    color: var(--blancCasse);
+    border: 2px solid var(--lavande);
+    transition: 0.3s;
+}
+#quizBouton:hover {
+    background-color: var(--rose);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
+}
+
+#miniJeuSection {
+    background-color: var(--saugeTransparent);    
+}
+#minijeuEmpreinte1 {
+    width: 30vw;
+    position: absolute;
+    left: -15%;
+    top: -1%;
+    rotate: 80deg;
+}
+#minijeuEmpreinte2 {
+    width: 30vw;
+    position: absolute;
+    right: -15%;
+    bottom: -8%;
+    rotate: 30deg;
+}
+#miniJeuBouton {
+    background-color: var(--vertSapin);
+    color: var(--blancCasse);
+    border: 2px solid var(--vertSapin);
+}
+#miniJeuBouton:hover {
+    background-color: var(--sauge);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
+    transition: 0.3s;
+}
+
+
+
+@media (min-width: 768px) {
+    .section {
+        padding: 4rem 15rem;
+        gap: 2rem;
+        min-height: 70vh;
+    }
+
+    #identiteEmpreinte, #identiteTete {
+        width: 25vw;
+    }
+    #identiteEmpreinte {
+        top: -35%;
+        rotate: 106deg;
+    }
+    #identiteTete {
+        right: -10%;
+        bottom: -20%;
+    }
+
+    #cerveauEmpreinte1 {
+        width: 40vw;
+        left: -25%;
+    }
+
+    #quizTete {
+        width: 25vw;
+        top: -30%;
+        rotate: -88deg;
+    }
+
+    #minijeuEmpreinte1 {
+        width: 25vw;
+        top: -20%;
+    }
+    #minijeuEmpreinte2 {
+        bottom: -40%;
+    }
 }

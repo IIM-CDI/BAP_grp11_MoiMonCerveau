@@ -3,27 +3,27 @@
         {
             "id": "LobeFrontalModal",
             "titre" : "Lobe Frontal",
-            "description" : "Description Lobe Frontal"
+            "description" : "Le lobe frontal sert à réfléchir, prendre des décisions, planifier et contrôler nos comportements. Il est aussi très important pour la personnalité, la concentration et le langage (parler). C’est un peu le “chef d’orchestre” du cerveau."
         },
         {
             "id": "LobeParietalModal",
             "titre" : "Lobe Parietal",
-            "description" : "Description Lobe Parietal"
+            "description" : "Le lobe pariétal sert à traiter les sensations du corps comme le toucher, la douleur, la température ou la pression. Il aide aussi à se repérer dans l’espace et à comprendre où se trouvent les objets et notre corps."
         },
         {
             "id": "LobeOcipitalModal",
             "titre" : "Lobe Ocipital ",
-            "description" : "Description Lobe Ocipital"
+            "description" : "Le lobe occipital sert à la vision. Il analyse les informations visuelles venant des yeux, comme les formes, les couleurs et les mouvements."
         },
         {
             "id": "LobeTemporalModal",
             "titre" : "Lobe Temporal",
-            "description" : "Description Lobe Temporal"
+            "description" : "Le lobe temporal sert principalement à l’audition, à la mémoire et à la compréhension du langage. Il permet de reconnaître les sons, les visages et de stocker des souvenirs."
         },
         {
             "id": "CerveletModal",
             "titre" : "Cervelet Modal",
-            "description" : "Description Cervelet Modal"
+            "description" : "Le cervelet sert à coordonner les mouvements, l’équilibre et la précision des gestes. Il permet de bouger de façon fluide, comme marcher, écrire ou attraper un objet."
         }
     ]
 }

@@ -1,4 +1,5 @@
 :root {
+    /* Palette de couleurs de la charte graphique */
     --vertChloris : #D3F883;
     --vertMousse: #CDE911;
     --vertSapin: #7C8F53;
@@ -6,5 +7,12 @@
     --minuit: #22252C;
     --sauge: #BCC7A5;
     --rose : #DEBBC8;
-    --Lavande : #A5AEC7;
+    --lavande : #A5AEC7;
+    
+    /* Palette étendue avec des variantes transparentes */
+    --blancCasseTransparent: #e2dfdf93;
+    --minuitTransparent: #22252cac;
+    --saugeTransparent: #bcc7a5a7;
+    --roseTransparent : #debbc89b;
+    --lavandeTransparent : #a5aec75f;
 }
