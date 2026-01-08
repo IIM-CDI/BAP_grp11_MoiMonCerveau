@@ -26,10 +26,11 @@ nav {
 a {
     color: var(--minuit);
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {
-    color: var(--rose);
+    color: var(--vertSapin);
     text-decoration: underline;
 }
 

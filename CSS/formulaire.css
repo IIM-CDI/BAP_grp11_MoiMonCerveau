@@ -45,6 +45,7 @@ section {
     padding: 0.8rem;
     border-radius: 2rem;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .bouton:hover {
