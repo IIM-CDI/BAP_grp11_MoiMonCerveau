@@ -35,10 +35,18 @@ async function getModal() {
     LobeAndsModals.forEach((Modal) => {
         modalesContenu.forEach((modaleContenu) => {
             if (modaleContenu.id == Modal.id) {
-                Modal.innerHTML += 
-                `<span class="closeButton">X</span>
-                <h3>${modaleContenu.titre}</h3>
-                <p>${modaleContenu.description}</p>`;        
+                if (modaleContenu.id == "LobeTemporalModal") {
+                    Modal.innerHTML += 
+                        `<img src="/assets/icons/BoutonFermetureBlanc.png" class="closeButton" alt="BoutonFermeture">
+                        <h3>${modaleContenu.titre}</h3>
+                        <p>${modaleContenu.description}</p>`;
+                } else {
+                    Modal.innerHTML += 
+                        `<img src="/assets/icons/BoutonFermetureNoir.png" class="closeButton" alt="BoutonFermeture">
+                        <h3>${modaleContenu.titre}</h3>
+                        <p>${modaleContenu.description}</p>`;
+                }
+
             }
         })
     })
