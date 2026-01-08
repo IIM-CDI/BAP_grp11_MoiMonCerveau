@@ -75,7 +75,6 @@ h2 {
     background-color: var(--rose);
     color: var(--minuit);
     border: 2px solid var(--minuit);
-    transition: 0.3s;
 }
 
 #miniJeuSection {
@@ -99,7 +98,6 @@ h2 {
     background-color: var(--vertSapin);
     color: var(--blancCasse);
     border: 2px solid var(--vertSapin);
-    transition: 0.3s;
 }
 #miniJeuBouton:hover {
     background-color: var(--sauge);

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/CSS/destyle.css">
+    <link rel="stylesheet" href="/CSS/Variable.css">
+    <link rel="stylesheet" href="/CSS/font.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+
+    <link rel="stylesheet" href="/CSS/formulaire.css">
+
+    <title>Home Page</title>
+    <meta name="description" content="Decouvrez comment vous utilisez votre cerveau">
+</head>
+<body>
+    <header>
+        <img src="/assets/LogoFondation.png" id="LogoFondation" alt="Fondation pour la recherche du Cerveau">
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/pages/quiz/quiz.html">quiz</a>
+            <a href="/pages/miniJeu/miniJeu.html">Mini Jeu</a>
+            <a href="/pages/formulaire/formulaire.html">Newsletter</a>
+        </nav>
+    </header>
+    <main>
+        <section id="homePageLink">
+            <div id="Redirection">
+                <img src="/assets/LogoFondationNoir.png" id="LogoFondationNoir" alt="Logo Fondation">
+                <h1>Decouvrez le cerveau</h1>
+                <button class="bouton">Acceder au cerveau</button>
+            </div>
+            <img src="/assets/formulaire/TeteBlanche.png" id="homePageLinkIllustration" class="Illustration" alt="decoration tete blanche">
+        </section>
+        <section id="formulaireSection">
+            <form action="" method="POST" id="NewsletterFormulaire">
+                <div>
+                    <h2 id="FormulaireTitre">Rejoignez nous</h2>
+                    <p>Reçois régulièrement des news et des infos pour mieux comprendre et prendre soin de ton cerveau. 
+                    Conseils pratiques, découvertes et bonnes habitudes pour l’entretenir au quotidien.</p>
+                </div>
+                <fieldset>
+                    <div class="textInput">
+                        <label for="Nom">Nom</label>
+                        <input type="text" name="Nom" id="Nom" class="textField">
+                    </div>
+                    <div class="textInput">
+                        <label for="Prenom">Prenom</label>
+                        <input type="text" name="Prenom" id="Prenom" class="textField">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="textInput">
+                        <label for="Email">Adresse email</label>
+                        <input type="text" name="Email" id="Email" class="textField">
+                        <p id="EmailError" class="error"></p>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="checkbox">
+                        <input type="checkbox" name="Autorisation" id="Autorisation">
+                        <label for="Autorisation">J’accepte de recevoir des emails et je peux me désinscrire à tout moment.</label>
+                        <p id="AutorisationError" class="error"></p>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Valider" class="bouton" id="ValidationBouton">
+            </form>
+            <img src="/assets/formulaire/EmpreinteVertSauge.png" id="FormulaireIllustration" class="Illustration" alt="decoration empreinte vert sauge">
+        </section>
+    </main>
+    <footer>
+        <div id="footerTop">
+            <div class="footerTopElements">
+                <h3>Product</h3>
+                <ul class="footerTopLinks">
+                    <li>Employee database</li>
+                    <li>Payroll</li>
+                    <li>Absences</li>
+                    <li>Time tracking</li>
+                    <li>Shift planner</li>
+                    <li>Recruiting</li>
+                </ul>
+            </div>
+            <div class="footerTopElements">
+                <h3>Information</h3>
+                <ul class="footerTopLinks">
+                    <li>FAQ</li>
+                    <li>Blog</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+            <div class="footerTopElements">
+                <h3>Company</h3>
+                <ul class="footerTopLinks">
+                    <li>About us</li>
+                    <li>Careers</li>
+                    <li>Contact us</li>
+                    <li>Lift Media</li>
+                </ul>
+            </div>
+            <div id="newsletter" class="footerTopElements">
+                <h3>Newsletter</h3>
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="52" height="52" rx="26" fill="#7D8F53"/>
+                    <path d="M38 26L30.0103 30L30.0103 26M38 26L13 26L30.0103 26M38 26L30.0103 22L30.0103 26" stroke="#F6F7F9" stroke-width="4"/>
+                </svg>
+                <p id="newsLetterMessage">Vivamus vel sapien nec justo sollicitudin aliquet. Proin in lectus a erat finibus dictum. Fusce nec augue sed urna feugiat vulputate.</p>
+            </div>
+        </div>
+        <hr>
+        <div id="footerBottom">
+            <img src="/assets/LogoFondation.png" id="LogoFondation" alt="Fondation pour la recherche du Cerveau">
+            <ul class="footerBottomLinks">
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Cookies</p>
+            </ul>
+            <ul class="footerBottomLinks">
+                <li><img src="/assets/SocialMedia/LinkedinLogo.png" alt="Logo Linkedin cliquable" class="SocialMediaLogo"></li>
+                <li><img src="/assets/SocialMedia/FaceBookLogo.png" alt="Logo FaceBook cliquable" class="SocialMediaLogo"></li>
+                <li><img src="/assets/SocialMedia/XLogo.png" alt="Logo X cliquable" class="SocialMediaLogo"></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script src="/JavaScript/formulaire.js"></script>
+</html>

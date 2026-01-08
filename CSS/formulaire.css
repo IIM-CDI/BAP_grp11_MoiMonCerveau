@@ -1,0 +1,104 @@
+main {
+    display: flex;
+    height: 120vh;
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+#homePageLink {
+    width: 35vw;
+    background-color: var(--blancCasseTransparent);
+}
+
+#Redirection {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    padding: 3rem;
+    margin-left: auto;
+}
+
+#LogoFondationNoir {
+    width: 15vw;
+}
+
+.Illustration {
+    position: absolute;
+}
+
+#homePageLinkIllustration {
+    width: 25vw;
+    top: 30%;
+    left: -50%;
+    rotate: 30deg;
+}
+
+.bouton {
+    background-color: var(--vertSapin);
+    color: var(--blancCasse);
+    border: 2px solid var(--vertSapin);
+    padding: 0.8rem;
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+
+.bouton:hover {
+    background-color: var(--sauge);
+    color: var(--minuit);
+    border: 2px solid var(--minuit);
+}
+
+#formulaireSection {
+    width: 65vw;
+    background-color: var(--saugeTransparent);
+}
+
+#NewsletterFormulaire {
+    width:50vw;
+    display: flex;
+    flex-direction: column;
+
+    padding: 3rem 7rem;
+    gap: 3rem;
+}
+
+#FormulaireTitre {
+    text-decoration: underline;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-between;
+}
+
+.textInput {
+    display: flex;
+    flex-direction: column;
+}
+.textField {
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+.checkbox {
+    width: 26vw;
+}
+
+#ValidationBouton {
+    width: 10vw;
+}
+
+.error {
+    color: red;
+}
+
+#FormulaireIllustration {
+    width: 40vw;
+    top: 40%;
+    left: 55%;
+    rotate: 240deg;
+}
